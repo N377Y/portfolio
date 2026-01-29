@@ -1,0 +1,34 @@
+# Google App Engine configuration for Portfolio application
+
+runtime: python311
+
+# Environment variables for production
+env_variables:
+  FLASK_ENV: 'production'
+
+# Entry point - using gunicorn for production
+entrypoint: gunicorn -b :$PORT main:app
+
+# Automatic scaling configuration
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 0
+  max_instances: 2
+  min_idle_instances: 0
+  max_idle_instances: 1
+
+# Instance resources
+instance_class: F1
+
+# Handlers for static files (optional - for better performance)
+handlers:
+# Static files
+- url: /static
+  static_dir: static
+  secure: always
+
+# All other URLs go to the Flask app
+- url: /.*
+  script: auto
+  secure: always
+

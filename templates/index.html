@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }} - {{ data.title }}</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=3.6">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="loading">
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader-text">Loading<span class="loader-dots"></span></div>
+    </div>
+
+    <!-- WebGL Canvas Background -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <a href="#home" class="logo-link">
+                <span class="logo-text">MK</span>
+            </a>
+        </div>
+        <div class="nav-menu">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#skills" class="nav-item">Skills</a>
+            <a href="#experience" class="nav-item">Experience</a>
+            <a href="#work" class="nav-item">Work</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-subtitle" data-aos="fade-up">
+                <span class="line"></span>
+                <span>Hello, I'm</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                <span class="hero-name">{{ data.name.split()[0] }}</span>
+                <span class="hero-surname">{{ data.name.split()[1] if data.name.split()|length > 1 else '' }}</span>
+            </h1>
+            <h2 class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                <span class="typing-text">{{ data.title }}</span>
+                <span class="cursor-blink">|</span>
+            </h2>
+            <p class="hero-text" data-aos="fade-up" data-aos-delay="300">
+                {{ data.bio }}
+            </p>
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Get in Touch</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#work" class="btn btn-secondary">
+                    <span>View Work</span>
+                    <i class="fas fa-briefcase"></i>
+                </a>
+            </div>
+            <div class="hero-socials" data-aos="fade-up" data-aos-delay="500">
+                <a href="{{ data.contact.github }}" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="{{ data.contact.linkedin }}" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:{{ data.contact.email }}" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll</div>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="lead">Développeuse Full Stack spécialisée QA & Test Automation avec passion pour l'IA et les architectures cloud-natives. J'allie expertise en test automation (ISTQB Advanced Certified) et développement logiciel pour créer des solutions robustes et sécurisées.</p>
+
+                    <h3 style="margin-top: 30px; margin-bottom: 20px; font-size: 20px; font-weight: 600;">Mon expertise couvre :</h3>
+                    <ul style="list-style: none; padding-left: 0; margin-bottom: 30px;">
+                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #6366f1;">•</span>
+                            <strong>Test Automation & QA :</strong> Tests E2E, fonctionnels, JIRA ticketing, reporting BO
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #8b5cf6;">•</span>
+                            <strong>Full Stack IA :</strong> Python/Flask (backend), React/TypeScript (frontend), GCP (infrastructure)
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #ec4899;">•</span>
+                            <strong>Cloud-Native :</strong> Google Cloud Functions, Cloud Run, Firestore, Docker, CI/CD
+                        </li>
+                    </ul>
+
+                    <p>Je suis passionnée par la qualité logicielle, l'IA appliquée et les défis tech cross-domaines (healthtech, fintech, admin automation).</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Années d'expérience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="4">0</div>
+                            <div class="stat-label">Projets innovants</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Technologies maîtrisées</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-wrapper">
+                        <div class="image-gradient"></div>
+                        {% if data.profile_image %}
+                        <img src="{{ data.profile_image }}" alt="{{ data.name }}" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        {% endif %}
+                        <div class="code-snippet" {% if data.profile_image %}style="display:none;"{% endif %}>
+                            <div class="code-line"><span class="keyword">const</span> developer = {</div>
+                            <div class="code-line indent">name: <span class="string">"{{ data.name }}"</span>,</div>
+                            <div class="code-line indent">role: <span class="string">"{{ data.title }}"</span>,</div>
+                            <div class="code-line indent">skills: [</div>
+                            <div class="code-line indent2"><span class="string">"Python"</span>, <span class="string">"JavaScript"</span>,</div>
+                            <div class="code-line indent2"><span class="string">"React"</span>, <span class="string">"Flask"</span></div>
+                            <div class="code-line indent">],</div>
+                            <div class="code-line indent">passion: <span class="string">"Building amazing things"</span></div>
+                            <div class="code-line">};</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+
+            {% if data.skills_by_category %}
+            <!-- Programming Languages -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-code"></i> Langages de Programmation</h3>
+                <div class="skills-grid">
+                    {% for skill in data.skills_by_category.programming %}
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                        <div class="skill-icon">
+                            <i class="{{ skill.icon }}"></i>
+                        </div>
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="{{ skill.level }}">
+                                    <span class="skill-percent">{{ skill.level }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-layer-group"></i> Frameworks & Bibliothèques</h3>
+                <div class="skills-grid">
+                    {% for skill in data.skills_by_category.frameworks %}
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                        <div class="skill-icon">
+                            <i class="{{ skill.icon }}"></i>
+                        </div>
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="{{ skill.level }}">
+                                    <span class="skill-percent">{{ skill.level }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- DevOps & Cloud -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+                <div class="skills-grid">
+                    {% for skill in data.skills_by_category.devops_cloud %}
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                        <div class="skill-icon">
+                            <i class="{{ skill.icon }}"></i>
+                        </div>
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="{{ skill.level }}">
+                                    <span class="skill-percent">{{ skill.level }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Tools & IDE -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-tools"></i> Outils & IDE</h3>
+                <div class="skills-grid">
+                    {% for skill in data.skills_by_category.tools_ide %}
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                        <div class="skill-icon">
+                            <i class="{{ skill.icon }}"></i>
+                        </div>
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="{{ skill.level }}">
+                                    <span class="skill-percent">{{ skill.level }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Testing & QA -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-vial"></i> Testing & QA</h3>
+                <div class="skills-grid">
+                    {% for skill in data.skills_by_category.testing_qa %}
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                        <div class="skill-icon">
+                            <i class="{{ skill.icon }}"></i>
+                        </div>
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="{{ skill.level }}">
+                                    <span class="skill-percent">{{ skill.level }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-database"></i> Bases de Données</h3>
+                <div class="skills-grid">
+                    {% for skill in data.skills_by_category.databases %}
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                        <div class="skill-icon">
+                            <i class="{{ skill.icon }}"></i>
+                        </div>
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="{{ skill.level }}">
+                                    <span class="skill-percent">{{ skill.level }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- AI Coding Tools -->
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
+                <h3 class="category-title"><i class="fas fa-brain"></i> AI Coding Tools</h3>
+                <div class="skills-grid">
+                    {% for skill in data.skills_by_category.ai_coding_tools %}
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                        <div class="skill-icon">
+                            <i class="{{ skill.icon }}"></i>
+                        </div>
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="{{ skill.level }}">
+                                    <span class="skill-percent">{{ skill.level }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Show More Button -->
+            <div class="skills-show-more" data-aos="fade-up" style="text-align: center; margin-top: 40px;">
+                <button id="skillsToggleBtn" class="btn btn-secondary">
+                    <span id="skillsToggleText">Voir plus</span>
+                    <i id="skillsToggleIcon" class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            {% else %}
+            <!-- Fallback: affichage simple si skills_by_category n'existe pas -->
+            <div class="skills-grid">
+                {% for skill in data.skills %}
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                    <div class="skill-icon">
+                        <i class="{{ skill.icon }}"></i>
+                    </div>
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-level="{{ skill.level }}">
+                                <span class="skill-percent">{{ skill.level }}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <section id="soft-skills" class="soft-skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Soft Skills</h2>
+            </div>
+            <div class="soft-skills-grid">
+                {% for soft_skill in data.soft_skills %}
+                <div class="soft-skill-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                    <div class="soft-skill-icon">
+                        <i class="{{ soft_skill.icon }}"></i>
+                    </div>
+                    <h3 class="soft-skill-name">{{ soft_skill.name }}</h3>
+                    <p class="soft-skill-description">{{ soft_skill.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                {% for exp in data.experiences %}
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                    <div class="timeline-marker">
+                        <i class="{{ exp.icon }}"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">{{ exp.title }}</h3>
+                            <span class="timeline-company">{{ exp.company }}</span>
+                            <span class="timeline-period">
+                                <i class="far fa-calendar"></i> {{ exp.period }}
+                            </span>
+                        </div>
+                        <p class="timeline-description">{{ exp.description }}</p>
+                        {% if exp.achievements %}
+                        <ul class="timeline-achievements">
+                            {% for achievement in exp.achievements %}
+                            <li>{{ achievement }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                {% for edu in data.education %}
+                <div class="education-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                    <div class="education-icon">
+                        <i class="{{ edu.icon }}"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-degree">{{ edu.degree }}</h3>
+                        <p class="education-school">{{ edu.school }}</p>
+                        <span class="education-period">
+                            <i class="far fa-calendar"></i> {{ edu.period }}
+                        </span>
+                        {% if edu.description %}
+                        <p class="education-description">{{ edu.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                {% for cert in data.certifications %}
+                <div class="certification-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="{{ cert.icon }}"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3 class="certification-name">{{ cert.name }}</h3>
+                            <p class="certification-issuer">{{ cert.issuer }}</p>
+                            <span class="certification-date">
+                                <i class="far fa-calendar"></i> {{ cert.date }}
+                            </span>
+                        </div>
+                    </div>
+
+                    {% if cert.pdf_file %}
+                    <div class="certification-preview">
+                        <iframe src="{{ cert.pdf_file }}#toolbar=0&navpanes=0&scrollbar=0" class="certification-iframe"></iframe>
+                        <div class="certification-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if cert.description %}
+                    <p class="certification-description">{{ cert.description }}</p>
+                    {% endif %}
+                    {% if cert.credential_id %}
+                    <div class="certification-badge">
+                        <i class="fas fa-check-circle"></i>
+                        Credential ID: {{ cert.credential_id }}
+                    </div>
+                    {% endif %}
+                    {% if cert.pdf_file %}
+                    <div class="certification-actions">
+                        <a href="{{ cert.pdf_file }}" target="_blank" class="certification-link">
+                            <i class="fas fa-external-link-alt"></i> Ouvrir en grand
+                        </a>
+                        <a href="{{ cert.pdf_file }}" download class="certification-link certification-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    {% elif cert.link %}
+                    <a href="{{ cert.link }}" target="_blank" class="certification-link">
+                        Voir la certification <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="projects-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">07</span>
+                <h2 class="section-title">Featured Work</h2>
+            </div>
+            <div class="projects-container">
+                {% for project in data.projects %}
+                <div class="project-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}" data-project-index="{{ loop.index0 }}" style="cursor: pointer;">
+                    <div class="project-number">0{{ loop.index }}</div>
+                    <div class="project-image" {% if not project.image %}style="background: linear-gradient(135deg, {{ project.color }}40, {{ project.color }}80);"{% endif %}>
+                        {% if project.image %}
+                        <img src="{{ project.image }}" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        {% else %}
+                        <div class="project-overlay"></div>
+                        {% endif %}
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <p class="project-description">{{ project.description }}</p>
+                        <div class="project-tech-stack">
+                            {% for tech in project.tech %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="project-links">
+                            {% if project.github and project.github != '#' %}
+                            <a href="{{ project.github }}" target="_blank" class="project-link" onclick="event.stopPropagation();">
+                                <i class="fab fa-github"></i>
+                                <span>Code</span>
+                            </a>
+                            {% endif %}
+                            {% if project.demo and project.demo != '#' %}
+                            <a href="{{ project.demo }}" target="_blank" class="project-link" onclick="event.stopPropagation();">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Modal pour les détails du projet -->
+        <div id="projectModal" class="project-modal">
+            <div class="project-modal-content">
+                <span class="project-modal-close">&times;</span>
+                <div class="project-modal-body">
+                    <div class="project-modal-image">
+                        <img id="modalProjectImage" src="" alt="">
+                    </div>
+                    <div class="project-modal-info">
+                        <h2 id="modalProjectTitle"></h2>
+                        <p id="modalProjectDescription"></p>
+
+                        <!-- Objectif -->
+                        <div class="project-modal-section" id="modalObjectifSection" style="display:none;">
+                            <h4><i class="fas fa-bullseye"></i> Objectif du projet</h4>
+                            <p id="modalProjectObjectif"></p>
+                        </div>
+
+                        <!-- Fonctionnalités clés -->
+                        <div class="project-modal-section" id="modalFeaturesSection" style="display:none;">
+                            <h4><i class="fas fa-star"></i> Fonctionnalités principales</h4>
+                            <ul id="modalProjectFeatures" class="project-features-list"></ul>
+                        </div>
+
+                        <div class="project-modal-tech">
+                            <h4><i class="fas fa-code"></i> Stack technique</h4>
+                            <div id="modalProjectTech"></div>
+                        </div>
+                        <div class="project-modal-links">
+                            <a id="modalProjectGithub" href="#" target="_blank" class="modal-btn modal-btn-github" style="display:none;" onclick="event.stopPropagation();">
+                                <i class="fab fa-github"></i> Voir le code
+                            </a>
+                            <a id="modalProjectDemo" href="#" target="_blank" class="modal-btn modal-btn-demo" style="display:none;" onclick="event.stopPropagation();">
+                                <i class="fas fa-external-link-alt"></i> Voir la démo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="cv-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">08</span>
+                <h2 class="section-title">Curriculum Vitae</h2>
+            </div>
+            <div class="cv-container">
+                <div class="cv-intro" data-aos="fade-up">
+                    <p>
+                        Téléchargez mon CV complet pour en savoir plus sur mon parcours,
+                        mes compétences et mes réalisations professionnelles.
+                    </p>
+                    <div class="cv-actions">
+                        <a href="/static/cv/CV_Marie-Ange_Kuitche.pdf" download class="cv-btn cv-btn-primary">
+                            <i class="fas fa-download"></i>
+                            Télécharger le CV (PDF)
+                        </a>
+                        <a href="/static/cv/CV_Marie-Ange_Kuitche.pdf" target="_blank" class="cv-btn cv-btn-secondary">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ouvrir dans un nouvel onglet
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cv-preview" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cv-iframe-container">
+                        <!-- Option 1: Iframe pour afficher le PDF (décommentez si vous avez un PDF) -->
+                        <iframe src="/static/cv/CV_Marie-Ange_Kuitche.pdf" class="cv-iframe"></iframe>
+
+                        <!-- Option 2: Placeholder avec instructions
+                        <div class="cv-placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <h3>Aperçu du CV</h3>
+                            <p>Placez votre CV PDF dans le dossier <code>static/cv/</code></p>
+                            <p class="text-small">Nommez-le : <strong>CV_Marie-Ange_Kuitche.pdf</strong></p>
+                            <p class="text-small">Puis décommentez la ligne iframe ci-dessus dans le code HTML</p>
+                        </div>
+                        -->
+                    </div>
+                </div>
+
+                <div class="cv-stats" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cv-stat-item">
+                        <div class="cv-stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="cv-stat-label">Expérience</div>
+                        <div class="cv-stat-value">3+ ans</div>
+                    </div>
+                    <div class="cv-stat-item">
+                        <div class="cv-stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="cv-stat-label">Projets</div>
+                        <div class="cv-stat-value">4+</div>
+                    </div>
+                    <div class="cv-stat-item">
+                        <div class="cv-stat-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cv-stat-label">Certifications</div>
+                        <div class="cv-stat-value">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">09</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
+                <p class="contact-text">
+                    Je suis actuellement disponible pour de nouveaux projets et opportunités.
+                    N'hésitez pas à me contacter, que ce soit pour discuter d'une collaboration,
+                    d'un projet ou simplement pour échanger !
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:{{ data.contact.email }}" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-info">
+                            <div class="method-label">Email</div>
+                            <div class="method-value">{{ data.contact.email }}</div>
+                        </div>
+                    </a>
+                    <a href="{{ data.contact.github }}" target="_blank" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="method-info">
+                            <div class="method-label">GitHub</div>
+                            <div class="method-value">View Profile</div>
+                        </div>
+                    </a>
+                    <a href="{{ data.contact.linkedin }}" target="_blank" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="method-info">
+                            <div class="method-label">LinkedIn</div>
+                            <div class="method-value">Connect</div>
+                        </div>
+                    </a>
+                </div>
+                <a href="mailto:{{ data.contact.email }}" class="btn btn-primary btn-large">
+                    <span>Say Hello</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Designed & Built by {{ data.name }}</p>
+                <p class="footer-year">© 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Project data for modal functionality
+        window.portfolioProjects = {{ data.projects | tojson | safe }};
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
