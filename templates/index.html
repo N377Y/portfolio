@@ -56,13 +56,17 @@
             </a>
         </div>
         <div class="nav-menu">
-            <a href="#home" class="nav-item active">Home</a>
-            <a href="#about" class="nav-item">About</a>
-            <a href="#skills" class="nav-item">Skills</a>
-            <a href="#experience" class="nav-item">Experience</a>
-            <a href="#work" class="nav-item">Work</a>
-            <a href="#contact" class="nav-item">Contact</a>
+            <a href="#home" class="nav-item active" data-fr="Accueil" data-en="Home">Accueil</a>
+            <a href="#about" class="nav-item" data-fr="À propos" data-en="About">À propos</a>
+            <a href="#skills" class="nav-item" data-fr="Compétences" data-en="Skills">Compétences</a>
+            <a href="#experience" class="nav-item" data-fr="Expérience" data-en="Experience">Expérience</a>
+            <a href="#work" class="nav-item" data-fr="Projets" data-en="Work">Projets</a>
+            <a href="#contact" class="nav-item" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
+        <button class="lang-toggle" id="langToggle" title="Switch language / Changer de langue">
+            <span class="lang-flag">🇫🇷</span>
+            <span class="lang-text">FR</span>
+        </button>
         <button class="theme-toggle" id="themeToggle">
             <i class="fas fa-moon"></i>
         </button>
@@ -77,7 +81,7 @@
         <div class="hero-content">
             <div class="hero-subtitle" data-aos="fade-up">
                 <span class="line"></span>
-                <span>Hello, I'm</span>
+                <span data-fr="Bonjour, je suis" data-en="Hello, I'm">Bonjour, je suis</span>
             </div>
             <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
                 <span class="hero-name">{{ data.name.split()[0] }}</span>
@@ -92,11 +96,11 @@
             </p>
             <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
                 <a href="#contact" class="btn btn-primary">
-                    <span>Get in Touch</span>
+                    <span data-fr="Me contacter" data-en="Get in Touch">Me contacter</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
                 <a href="#work" class="btn btn-secondary">
-                    <span>View Work</span>
+                    <span data-fr="Voir mes projets" data-en="View Work">Voir mes projets</span>
                     <i class="fas fa-briefcase"></i>
                 </a>
             </div>
@@ -123,7 +127,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">01</span>
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-fr="À propos de moi" data-en="About Me">À propos de moi</h2>
             </div>
             <div class="about-grid">
                 <div class="about-text" data-aos="fade-right">
@@ -179,7 +183,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">02</span>
-                <h2 class="section-title">Technical Skills</h2>
+                <h2 class="section-title" data-fr="Compétences techniques" data-en="Technical Skills">Compétences techniques</h2>
             </div>
 
             {% if data.skills_by_category %}
@@ -373,7 +377,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">03</span>
-                <h2 class="section-title">Soft Skills</h2>
+                <h2 class="section-title" data-fr="Compétences comportementales" data-en="Soft Skills">Compétences comportementales</h2>
             </div>
             <div class="soft-skills-grid">
                 {% for soft_skill in data.soft_skills %}
@@ -394,7 +398,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">04</span>
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title" data-fr="Expérience professionnelle" data-en="Experience">Expérience professionnelle</h2>
             </div>
             <div class="timeline">
                 {% for exp in data.experiences %}
@@ -430,7 +434,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">05</span>
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title" data-fr="Formation" data-en="Education">Formation</h2>
             </div>
             <div class="education-grid">
                 {% for edu in data.education %}
@@ -459,7 +463,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">06</span>
-                <h2 class="section-title">Certifications</h2>
+                <h2 class="section-title" data-fr="Certifications" data-en="Certifications">Certifications</h2>
             </div>
             <div class="certifications-grid">
                 {% for cert in data.certifications %}
@@ -520,7 +524,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">07</span>
-                <h2 class="section-title">Featured Work</h2>
+                <h2 class="section-title" data-fr="Projets en vedette" data-en="Featured Work">Projets en vedette</h2>
             </div>
             <div class="projects-container">
                 {% for project in data.projects %}
@@ -608,22 +612,22 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">08</span>
-                <h2 class="section-title">Curriculum Vitae</h2>
+                <h2 class="section-title" data-fr="Curriculum Vitae" data-en="Curriculum Vitae">Curriculum Vitae</h2>
             </div>
             <div class="cv-container">
                 <div class="cv-intro" data-aos="fade-up">
-                    <p>
+                    <p data-fr="Téléchargez mon CV complet pour en savoir plus sur mon parcours, mes compétences et mes réalisations professionnelles." data-en="Download my complete CV to learn more about my background, skills and professional achievements.">
                         Téléchargez mon CV complet pour en savoir plus sur mon parcours,
                         mes compétences et mes réalisations professionnelles.
                     </p>
                     <div class="cv-actions">
                         <a href="static/cv/CV_Marie-Ange_KUITCHE.pdf" download class="cv-btn cv-btn-primary">
                             <i class="fas fa-download"></i>
-                            <span>Télécharger le CV</span>
+                            <span data-fr="Télécharger le CV" data-en="Download CV">Télécharger le CV</span>
                         </a>
                         <a href="static/cv/CV_Marie-Ange_KUITCHE.pdf" target="_blank" class="cv-btn cv-btn-secondary">
                             <i class="fas fa-external-link-alt"></i>
-                            Ouvrir dans un nouvel onglet
+                            <span data-fr="Ouvrir dans un nouvel onglet" data-en="Open in new tab">Ouvrir dans un nouvel onglet</span>
                         </a>
                     </div>
                 </div>
@@ -677,10 +681,10 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">09</span>
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-fr="Me contacter" data-en="Get In Touch">Me contacter</h2>
             </div>
             <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
-                <p class="contact-text">
+                <p class="contact-text" data-fr="Je suis actuellement disponible pour de nouveaux projets et opportunités. N'hésitez pas à me contacter, que ce soit pour discuter d'une collaboration, d'un projet ou simplement pour échanger !" data-en="I'm currently available for new projects and opportunities. Feel free to contact me, whether it's to discuss a collaboration, a project, or just to chat!">
                     Je suis actuellement disponible pour de nouveaux projets et opportunités.
                     N'hésitez pas à me contacter, que ce soit pour discuter d'une collaboration,
                     d'un projet ou simplement pour échanger !

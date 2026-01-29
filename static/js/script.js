@@ -74,6 +74,44 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ============================================
+// LANGUAGE TOGGLE
+// ============================================
+const langToggle = document.getElementById('langToggle');
+const langFlag = langToggle?.querySelector('.lang-flag');
+const langText = langToggle?.querySelector('.lang-text');
+
+// Get saved language or default to French
+let currentLang = localStorage.getItem('language') || 'fr';
+
+// Update language on page load
+updateLanguage(currentLang);
+
+langToggle?.addEventListener('click', () => {
+    currentLang = currentLang === 'fr' ? 'en' : 'fr';
+    localStorage.setItem('language', currentLang);
+    updateLanguage(currentLang);
+});
+
+function updateLanguage(lang) {
+    // Update flag and text in button
+    if (langFlag && langText) {
+        langFlag.textContent = lang === 'fr' ? '🇫🇷' : '🇬🇧';
+        langText.textContent = lang === 'fr' ? 'FR' : 'EN';
+    }
+
+    // Update all elements with data-fr and data-en attributes
+    document.querySelectorAll('[data-fr][data-en]').forEach(element => {
+        const translation = element.getAttribute(`data-${lang}`);
+        if (translation) {
+            element.textContent = translation;
+        }
+    });
+
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+}
+
+// ============================================
 // NAVIGATION
 // ============================================
 const nav = document.querySelector('.nav');
