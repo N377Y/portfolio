@@ -1,0 +1,129 @@
+{
+  "fr": {
+    "translation": {
+      "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "skills": "Compétences",
+        "experience": "Expérience",
+        "work": "Projets",
+        "contact": "Contact"
+      },
+      "hero": {
+        "greeting": "Bonjour, je suis",
+        "title": "Développeuse Full Stack | QA & Test Automation",
+        "bio": "Développeuse Full Stack spécialisée QA & Test Automation avec passion pour l'IA et les architectures cloud-natives. J'allie expertise en test automation (ISTQB Advanced Certified) et développement logiciel pour créer des solutions robustes et sécurisées.",
+        "cta_contact": "Me contacter",
+        "cta_work": "Voir mes projets"
+      },
+      "sections": {
+        "about": "À propos de moi",
+        "skills": "Compétences techniques",
+        "softskills": "Compétences comportementales",
+        "experience": "Expérience professionnelle",
+        "education": "Formation",
+        "certifications": "Certifications",
+        "work": "Projets en vedette",
+        "cv": "Curriculum Vitae",
+        "contact": "Me contacter"
+      },
+      "about": {
+        "lead": "Ingénieure logiciel passionnée par l'excellence technique et l'innovation. Mon parcours combine développement Full Stack, qualité logicielle et architecture cloud, avec une expertise particulière en automatisation de tests et en solutions IA pour améliorer les processus métier.",
+        "expertise_title": "Mon expertise couvre :",
+        "expertise_qa": "<strong>Test Automation & QA :</strong> Tests E2E, fonctionnels, JIRA ticketing, reporting BO",
+        "expertise_fullstack": "<strong>Full Stack IA :</strong> Python/Flask (backend), React/TypeScript (frontend), GCP (infrastructure)",
+        "expertise_cloud": "<strong>Cloud-Native :</strong> Google Cloud Functions, Cloud Run, Firestore, Docker, CI/CD",
+        "current": "Actuellement consultante chez Haulogy, je conçois des solutions de test automation pour garantir la qualité des applications critiques. Certifiée ISTQB Advanced Level et Google Cloud Digital Leader, je m'engage à livrer des projets performants et maintenables.",
+        "stats": {
+          "years": "Années d'expérience",
+          "projects": "Projets innovants",
+          "technologies": "Technologies maîtrisées"
+        }
+      },
+      "skills": {
+        "categories": {
+          "programming": "Langages de Programmation",
+          "frameworks": "Frameworks & Bibliothèques",
+          "devops": "DevOps & Cloud",
+          "tools": "Outils & IDE",
+          "testing": "Testing & QA",
+          "databases": "Bases de Données",
+          "ai": "Outils IA pour le Coding"
+        }
+      },
+      "cv": {
+        "intro": "Téléchargez mon CV complet pour en savoir plus sur mon parcours, mes compétences et mes réalisations professionnelles.",
+        "download": "Télécharger le CV",
+        "open": "Ouvrir dans un nouvel onglet"
+      },
+      "contact": {
+        "text": "Je suis actuellement disponible pour de nouveaux projets et opportunités. N'hésitez pas à me contacter, que ce soit pour discuter d'une collaboration, d'un projet ou simplement pour échanger !"
+      },
+      "loading": "Chargement"
+    }
+  },
+  "en": {
+    "translation": {
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "experience": "Experience",
+        "work": "Work",
+        "contact": "Contact"
+      },
+      "hero": {
+        "greeting": "Hello, I'm",
+        "title": "Full Stack Developer | QA & Test Automation",
+        "bio": "Full Stack Developer specialized in QA & Test Automation with a passion for AI and cloud-native architectures. I combine expertise in test automation (ISTQB Advanced Certified) and software development to create robust and secure solutions.",
+        "cta_contact": "Get in Touch",
+        "cta_work": "View Work"
+      },
+      "sections": {
+        "about": "About Me",
+        "skills": "Technical Skills",
+        "softskills": "Soft Skills",
+        "experience": "Experience",
+        "education": "Education",
+        "certifications": "Certifications",
+        "work": "Featured Work",
+        "cv": "Curriculum Vitae",
+        "contact": "Get In Touch"
+      },
+      "about": {
+        "lead": "Software engineer passionate about technical excellence and innovation. My background combines Full Stack development, software quality, and cloud architecture, with particular expertise in test automation and AI solutions to improve business processes.",
+        "expertise_title": "My expertise covers:",
+        "expertise_qa": "<strong>Test Automation & QA:</strong> E2E tests, functional, JIRA ticketing, BO reporting",
+        "expertise_fullstack": "<strong>Full Stack AI:</strong> Python/Flask (backend), React/TypeScript (frontend), GCP (infrastructure)",
+        "expertise_cloud": "<strong>Cloud-Native:</strong> Google Cloud Functions, Cloud Run, Firestore, Docker, CI/CD",
+        "current": "Currently a consultant at Haulogy, I design test automation solutions to ensure the quality of critical applications. Certified ISTQB Advanced Level and Google Cloud Digital Leader, I am committed to delivering high-performance and maintainable projects.",
+        "stats": {
+          "years": "Years of experience",
+          "projects": "Innovative projects",
+          "technologies": "Technologies mastered"
+        }
+      },
+      "skills": {
+        "categories": {
+          "programming": "Programming Languages",
+          "frameworks": "Frameworks & Libraries",
+          "devops": "DevOps & Cloud",
+          "tools": "Tools & IDE",
+          "testing": "Testing & QA",
+          "databases": "Databases",
+          "ai": "AI Coding Tools"
+        }
+      },
+      "cv": {
+        "intro": "Download my complete CV to learn more about my background, skills and professional achievements.",
+        "download": "Download CV",
+        "open": "Open in new tab"
+      },
+      "contact": {
+        "text": "I'm currently available for new projects and opportunities. Feel free to contact me, whether it's to discuss a collaboration, a project, or just to chat!"
+      },
+      "loading": "Loading"
+    }
+  }
+}
+

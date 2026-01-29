@@ -77,72 +77,12 @@ themeToggle.addEventListener('click', () => {
 // LANGUAGE TOGGLE
 // ============================================
 const langToggle = document.getElementById('langToggle');
-const langText = langToggle?.querySelector('.lang-text');
-
-// Get saved language or default to French
-let currentLang = localStorage.getItem('language') || 'fr';
-
-// Update language on page load
-updateLanguage(currentLang);
 
 langToggle?.addEventListener('click', () => {
-    currentLang = currentLang === 'fr' ? 'en' : 'fr';
-    localStorage.setItem('language', currentLang);
-    updateLanguage(currentLang);
+    const currentLang = window.i18n.getCurrentLanguage();
+    const newLang = currentLang === 'fr' ? 'en' : 'fr';
+    window.i18n.changeLanguage(newLang);
 });
-
-function updateLanguage(lang) {
-    // Update text in button
-    if (langText) {
-        langText.textContent = lang === 'fr' ? 'FR' : 'EN';
-    }
-
-    // Update all elements with data-fr and data-en attributes
-    document.querySelectorAll('[data-fr][data-en]').forEach(element => {
-        const translation = element.getAttribute(`data-${lang}`);
-        if (translation) {
-            // Check if translation contains HTML tags
-            if (translation.includes('<')) {
-                // Use innerHTML for HTML content
-                element.innerHTML = translation;
-            } else {
-                // For plain text, check if element has children
-                if (element.querySelector('i, .line, .cursor-blink')) {
-                    // Find text nodes and update them
-                    const walker = document.createTreeWalker(
-                        element,
-                        NodeFilter.SHOW_TEXT,
-                        null,
-                        false
-                    );
-                    const textNodes = [];
-                    let node;
-                    while (node = walker.nextNode()) {
-                        if (node.textContent.trim() && node.parentElement === element) {
-                            textNodes.push(node);
-                        }
-                    }
-                    if (textNodes.length > 0) {
-                        textNodes[0].textContent = translation;
-                    }
-                } else {
-                    // Simple text content
-                    element.textContent = translation;
-                }
-            }
-        }
-    });
-
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-
-    // Update loader text
-    const loaderText = document.querySelector('.loader-text');
-    if (loaderText) {
-        const baseText = lang === 'fr' ? 'Chargement' : 'Loading';
-        loaderText.innerHTML = baseText + '<span class="loader-dots"></span>';
-    }
-}
 
 // ============================================
 // NAVIGATION
