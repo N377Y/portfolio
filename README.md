@@ -4,7 +4,7 @@ Portfolio professionnel moderne et interactif présentant mes compétences, exp�
 
 ## 🚀 Voir le Portfolio en Ligne
 
-🌐 **[Visitez mon portfolio](https://marie-angekuitche.github.io/Portfolio/)**
+🌐 **[Visitez mon portfolio](https://n377y.github.io/portfolio/)**
 
 > *Une fois déployé sur GitHub Pages*
 
@@ -227,9 +227,9 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 ## 📧 Contact
 
-- **Email**: mariemegouo@gmail.com
-- **LinkedIn**: [Marie-Ange KUITCHE](https://www.linkedin.com/in/marie-ange-kuitche/)
-- **GitHub**: [@marie-angekuitche](https://github.com/marie-angekuitche)
+- **Email**: marie-ange.kuitche@groupe-esigelec.org
+- **LinkedIn**: [Marie-Ange KUITCHE](https://www.linkedin.com/in/marie-ange-nelly-kuitche-megouo-a49974226/)
+- **GitHub**: [@marie-angekuitche](https://github.com/N377Y)
 
 ---
 
