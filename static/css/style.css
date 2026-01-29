@@ -388,9 +388,9 @@ body.dark-mode .nav.scrolled {
 
 .lang-toggle {
     width: auto;
-    min-width: 70px;
+    min-width: 65px;
     height: 40px;
-    padding: 0 12px;
+    padding: 0 14px;
     border-radius: 20px;
     border: 1px solid var(--text-tertiary);
     background: transparent;
@@ -412,13 +412,14 @@ body.dark-mode .nav.scrolled {
     transform: translateY(-2px);
 }
 
-.lang-flag {
-    font-size: 18px;
-    line-height: 1;
+.lang-toggle i {
+    font-size: 14px;
+    color: var(--accent-1);
 }
 
 .lang-text {
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    font-family: 'Space Grotesk', monospace;
 }
 
 .menu-toggle {

@@ -77,7 +77,6 @@ themeToggle.addEventListener('click', () => {
 // LANGUAGE TOGGLE
 // ============================================
 const langToggle = document.getElementById('langToggle');
-const langFlag = langToggle?.querySelector('.lang-flag');
 const langText = langToggle?.querySelector('.lang-text');
 
 // Get saved language or default to French
@@ -93,9 +92,8 @@ langToggle?.addEventListener('click', () => {
 });
 
 function updateLanguage(lang) {
-    // Update flag and text in button
-    if (langFlag && langText) {
-        langFlag.textContent = lang === 'fr' ? '🇫🇷' : '🇬🇧';
+    // Update text in button
+    if (langText) {
         langText.textContent = lang === 'fr' ? 'FR' : 'EN';
     }
 
@@ -103,12 +101,37 @@ function updateLanguage(lang) {
     document.querySelectorAll('[data-fr][data-en]').forEach(element => {
         const translation = element.getAttribute(`data-${lang}`);
         if (translation) {
-            element.textContent = translation;
+            // For elements with inner HTML structure, only update text nodes
+            if (element.querySelector('i, span, .line')) {
+                // Find and update text nodes only
+                const walker = document.createTreeWalker(
+                    element,
+                    NodeFilter.SHOW_TEXT,
+                    null,
+                    false
+                );
+                let textNode;
+                while (textNode = walker.nextNode()) {
+                    if (textNode.textContent.trim()) {
+                        textNode.textContent = translation;
+                        break;
+                    }
+                }
+            } else {
+                element.textContent = translation;
+            }
         }
     });
 
     // Update HTML lang attribute
     document.documentElement.lang = lang;
+
+    // Update loader text
+    const loaderText = document.querySelector('.loader-text');
+    if (loaderText) {
+        const baseText = lang === 'fr' ? 'Chargement' : 'Loading';
+        loaderText.innerHTML = baseText + '<span class="loader-dots"></span>';
+    }
 }
 
 // ============================================
