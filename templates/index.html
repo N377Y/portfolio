@@ -166,19 +166,8 @@
                     <div class="image-wrapper">
                         <div class="image-gradient"></div>
                         {% if data.profile_image %}
-                        <img src="{{ data.profile_image }}" alt="{{ data.name }}" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <img src="{{ data.profile_image }}" alt="{{ data.name }}" class="profile-photo">
                         {% endif %}
-                        <div class="code-snippet" {% if data.profile_image %}style="display:none;"{% endif %}>
-                            <div class="code-line"><span class="keyword">const</span> developer = {</div>
-                            <div class="code-line indent">name: <span class="string">"{{ data.name }}"</span>,</div>
-                            <div class="code-line indent">role: <span class="string">"{{ data.title }}"</span>,</div>
-                            <div class="code-line indent">skills: [</div>
-                            <div class="code-line indent2"><span class="string">"Python"</span>, <span class="string">"JavaScript"</span>,</div>
-                            <div class="code-line indent2"><span class="string">"React"</span>, <span class="string">"Flask"</span></div>
-                            <div class="code-line indent">],</div>
-                            <div class="code-line indent">passion: <span class="string">"Building amazing things"</span></div>
-                            <div class="code-line">};</div>
-                        </div>
                     </div>
                 </div>
             </div>
