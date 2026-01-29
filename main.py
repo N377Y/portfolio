@@ -78,33 +78,45 @@ portfolio_data = {
     'soft_skills': [
         {
             'name': 'Écoute active',
+            'name_en': 'Active listening',
             'icon': 'fas fa-ear-listen',
-            'description': 'Capacité d\'écoute attentive pour comprendre les besoins et les attentes des clients et équipes.'
+            'description': 'Capacité d\'écoute attentive pour comprendre les besoins et les attentes des clients et équipes.',
+            'description_en': 'Ability to listen attentively to understand the needs and expectations of clients and teams.'
         },
         {
             'name': 'Curiosité',
+            'name_en': 'Curiosity',
             'icon': 'fas fa-lightbulb',
-            'description': 'Soif d\'apprendre et de découvrir de nouvelles technologies et approches innovantes.'
+            'description': 'Soif d\'apprendre et de découvrir de nouvelles technologies et approches innovantes.',
+            'description_en': 'Thirst for learning and discovering new technologies and innovative approaches.'
         },
         {
             'name': 'Résilience',
+            'name_en': 'Resilience',
             'icon': 'fas fa-shield-alt',
-            'description': 'Capacité à persévérer face aux défis et à rebondir après les obstacles.'
+            'description': 'Capacité à persévérer face aux défis et à rebondir après les obstacles.',
+            'description_en': 'Ability to persevere in the face of challenges and bounce back after obstacles.'
         },
         {
             'name': 'Créativité',
+            'name_en': 'Creativity',
             'icon': 'fas fa-palette',
-            'description': 'Approche créative pour résoudre des problèmes complexes avec des solutions innovantes.'
+            'description': 'Approche créative pour résoudre des problèmes complexes avec des solutions innovantes.',
+            'description_en': 'Creative approach to solving complex problems with innovative solutions.'
         },
         {
             'name': 'Intelligence émotionnelle',
+            'name_en': 'Emotional intelligence',
             'icon': 'fas fa-heart',
-            'description': 'Compréhension et gestion des émotions pour favoriser de bonnes relations de travail.'
+            'description': 'Compréhension et gestion des émotions pour favoriser de bonnes relations de travail.',
+            'description_en': 'Understanding and managing emotions to foster good working relationships.'
         },
         {
             'name': 'Flexibilité et adaptabilité',
+            'name_en': 'Flexibility and adaptability',
             'icon': 'fas fa-sync-alt',
-            'description': 'Adaptation rapide aux changements et aux nouvelles situations professionnelles.'
+            'description': 'Adaptation rapide aux changements et aux nouvelles situations professionnelles.',
+            'description_en': 'Quick adaptation to changes and new professional situations.'
         },
     ],
     'languages': [

@@ -385,8 +385,8 @@
                     <div class="soft-skill-icon">
                         <i class="{{ soft_skill.icon }}"></i>
                     </div>
-                    <h3 class="soft-skill-name">{{ soft_skill.name }}</h3>
-                    <p class="soft-skill-description">{{ soft_skill.description }}</p>
+                    <h3 class="soft-skill-name" data-fr="{{ soft_skill.name }}" data-en="{{ soft_skill.name_en }}">{{ soft_skill.name }}</h3>
+                    <p class="soft-skill-description" data-fr="{{ soft_skill.description }}" data-en="{{ soft_skill.description_en }}">{{ soft_skill.description }}</p>
                 </div>
                 {% endfor %}
             </div>
