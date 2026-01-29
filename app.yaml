@@ -1,4 +1,5 @@
 # Google App Engine configuration for Portfolio application
+# Optimized for free tier and $300 GCP credits
 
 runtime: python311
 
@@ -7,25 +8,61 @@ env_variables:
   FLASK_ENV: 'production'
 
 # Entry point - using gunicorn for production
-entrypoint: gunicorn -b :$PORT main:app
+entrypoint: gunicorn -b :$PORT --workers 1 --threads 2 --timeout 60 main:app
 
-# Automatic scaling configuration
+# Automatic scaling configuration - optimized for free tier
 automatic_scaling:
-  target_cpu_utilization: 0.65
+  # Lower CPU threshold to scale down faster
+  target_cpu_utilization: 0.75
+  # Minimal instances for cost optimization
   min_instances: 0
   max_instances: 2
+  # Keep instances idle to avoid cold starts during traffic
   min_idle_instances: 0
   max_idle_instances: 1
+  # Faster scale down
+  min_pending_latency: 100ms
+  max_pending_latency: 500ms
 
-# Instance resources
+# Use F1 instance class (smallest, free tier eligible)
 instance_class: F1
 
-# Handlers for static files (optional - for better performance)
+# Handlers for static files (better performance and reduced compute costs)
 handlers:
-# Static files
-- url: /static
-  static_dir: static
+# Static CSS files - cached for 1 hour
+- url: /static/css
+  static_dir: static/css
   secure: always
+  expiration: "1h"
+
+# Static JS files - cached for 1 hour
+- url: /static/js
+  static_dir: static/js
+  secure: always
+  expiration: "1h"
+
+# Static images - cached for 1 day
+- url: /static/images
+  static_dir: static/images
+  secure: always
+  expiration: "1d"
+
+# Static project images - cached for 1 day
+- url: /static/projets
+  static_dir: static/projets
+  secure: always
+  expiration: "1d"
+
+# Static PDFs (CV, certifications) - cached for 1 day
+- url: /static/cv
+  static_dir: static/cv
+  secure: always
+  expiration: "1d"
+
+- url: /static/certifications
+  static_dir: static/certifications
+  secure: always
+  expiration: "1d"
 
 # All other URLs go to the Flask app
 - url: /.*

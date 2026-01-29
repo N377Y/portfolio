@@ -16,7 +16,7 @@ portfolio_data = {
     'name': 'Marie-Ange KUITCHE',
     'title': 'Développeuse Full Stack | QA & Test Automation',
     'bio': 'Développeuse Full Stack spécialisée QA & Test Automation avec passion pour l\'IA et les architectures cloud-natives. J\'allie expertise en test automation (ISTQB Advanced Certified) et développement logiciel pour créer des solutions robustes et sécurisées.',
-    'profile_image': '/static/images/profile.png',  # Photo de profil
+    'profile_image': 'static/images/profile.png',  # Photo de profil
     'skills_by_category': {
         'programming': [
             {'name': 'Python', 'level': 95, 'icon': 'fab fa-python'},
@@ -29,15 +29,14 @@ portfolio_data = {
         ],
         'frameworks': [
             {'name': 'Flask', 'level': 95, 'icon': 'fas fa-flask'},
-            {'name': 'React', 'level': 90, 'icon': 'fab fa-react'},
-            {'name': 'Vue.js', 'level': 75, 'icon': 'fab fa-vuejs'},
-            {'name': 'Node.js', 'level': 85, 'icon': 'fab fa-node'},
+            {'name': 'React', 'level': 75, 'icon': 'fab fa-react'},
+            {'name': 'Vue.js', 'level': 75, 'icon': 'fab fa-vuejs'}
         ],
         'devops_cloud': [
             {'name': 'Docker', 'level': 85, 'icon': 'fab fa-docker'},
-            {'name': 'Kubernetes', 'level': 75, 'icon': 'fas fa-dharmachakra'},
-            {'name': 'AWS', 'level': 80, 'icon': 'fab fa-aws'},
-            {'name': 'Google Cloud Platform', 'level': 80, 'icon': 'fab fa-google'},
+            {'name': 'Kubernetes', 'level': 30, 'icon': 'fas fa-dharmachakra'},
+            {'name': 'AWS', 'level': 60, 'icon': 'fab fa-aws'},
+            {'name': 'Google Cloud Platform', 'level': 70, 'icon': 'fab fa-google'},
         ],
         'tools_ide': [
             {'name': 'VS Code', 'level': 95, 'icon': 'fas fa-code'},
@@ -47,23 +46,23 @@ portfolio_data = {
             {'name': 'Eclipse', 'level': 75, 'icon': 'fas fa-code'},
             {'name': 'Git/GitHub', 'level': 90, 'icon': 'fab fa-github'},
             {'name': 'JIRA', 'level': 90, 'icon': 'fab fa-jira'},
-            {'name': 'Confluence', 'level': 85, 'icon': 'fab fa-confluence'},
+            {'name': 'Confluence', 'level': 65, 'icon': 'fab fa-confluence'},
         ],
         'testing_qa': [
-            {'name': 'Playwright', 'level': 90, 'icon': 'fas fa-robot'},
-            {'name': 'JasperSoft', 'level': 85, 'icon': 'fas fa-chart-bar'},
-            {'name': 'Xray', 'level': 80, 'icon': 'fas fa-vial'},
-            {'name': 'Jam', 'level': 75, 'icon': 'fas fa-bug'},
+            {'name': 'Playwright', 'level': 75, 'icon': 'fas fa-robot'},
+            {'name': 'JasperSoft', 'level': 65, 'icon': 'fas fa-chart-bar'},
+            {'name': 'Xray', 'level': 75, 'icon': 'fas fa-vial'},
+            {'name': 'Jam', 'level': 65, 'icon': 'fas fa-bug'},
         ],
         'databases': [
             {'name': 'PostgreSQL', 'level': 85, 'icon': 'fas fa-database'},
-            {'name': 'MongoDB', 'level': 80, 'icon': 'fas fa-database'},
-            {'name': 'NoSQL', 'level': 80, 'icon': 'fas fa-database'},
+            {'name': 'MongoDB', 'level': 50, 'icon': 'fas fa-database'},
+            {'name': 'NoSQL', 'level': 50, 'icon': 'fas fa-database'},
         ],
         'ai_coding_tools': [
             {'name': 'Claude Code', 'level': 90, 'icon': 'fas fa-robot'},
             {'name': 'GitHub Copilot', 'level': 95, 'icon': 'fab fa-github'},
-            {'name': 'Cursor', 'level': 85, 'icon': 'fas fa-terminal'},
+            {'name': 'Manus', 'level': 85, 'icon': 'fas fa-hand-sparkles'},
             {'name': 'Gemini', 'level': 80, 'icon': 'fas fa-gem'},
             {'name': 'GPT Codex', 'level': 85, 'icon': 'fas fa-brain'},
         ],
@@ -72,9 +71,8 @@ portfolio_data = {
     'skills': [
         {'name': 'Python', 'level': 95, 'icon': 'fab fa-python'},
         {'name': 'JavaScript', 'level': 90, 'icon': 'fab fa-js'},
-        {'name': 'React', 'level': 90, 'icon': 'fab fa-react'},
+        {'name': 'React', 'level': 75, 'icon': 'fab fa-react'},
         {'name': 'Flask', 'level': 95, 'icon': 'fas fa-flask'},
-        {'name': 'Node.js', 'level': 85, 'icon': 'fab fa-node'},
         {'name': 'Docker', 'level': 85, 'icon': 'fab fa-docker'},
     ],
     'soft_skills': [
@@ -170,8 +168,8 @@ portfolio_data = {
             'icon': 'fas fa-certificate',
             'description': 'Certification avancée en automatisation des tests et ingénierie de la qualité logicielle.',
             'credential_id': None,
-            'link': '/static/certifications/ISTQB.pdf',
-            'pdf_file': '/static/certifications/ISTQB.pdf'
+            'link': 'static/certifications/ISTQB.pdf',
+            'pdf_file': 'static/certifications/ISTQB.pdf'
         },
         {
             'name': 'Google Cloud Digital Leader',
@@ -179,8 +177,8 @@ portfolio_data = {
             'icon': 'fab fa-google',
             'description': 'Certification sur les fondamentaux du cloud computing et des services Google Cloud.',
             'credential_id': None,
-            'link': '/static/certifications/CloudDigitalLeader.pdf',
-            'pdf_file': '/static/certifications/CloudDigitalLeader.pdf'
+            'link': 'static/certifications/CloudDigitalLeader.pdf',
+            'pdf_file': 'static/certifications/CloudDigitalLeader.pdf'
         },
         {
             'name': 'Numérique Responsable',
@@ -188,8 +186,8 @@ portfolio_data = {
             'icon': 'fas fa-leaf',
             'description': 'Certification sur les bonnes pratiques du numérique responsable et durable.',
             'credential_id': None,
-            'link': '/static/certifications/Numerique-responsable.pdf',
-            'pdf_file': '/static/certifications/Numerique-responsable.pdf'
+            'link': 'static/certifications/Numerique-responsable.pdf',
+            'pdf_file': 'static/certifications/Numerique-responsable.pdf'
         },
     ],
     'activities': [
@@ -237,7 +235,7 @@ portfolio_data = {
             'description': 'Plateforme complète pour organiser et gérer des hackathons : inscriptions, gestion des équipes, soumissions de projets, évaluations et classements. Interface intuitive pour organisateurs et participants.',
             'tech': ['Python', 'Flask', 'React', 'PostgreSQL', 'WebSockets'],
             'color': '#667eea',
-            'image': '/static/projets/HackAtassa.png',
+            'image': 'static/projets/HackAtassa.png',
             'github': '#',
             'demo': '#',
             'details': {
@@ -263,7 +261,7 @@ portfolio_data = {
             'description': 'Application web de suivi en temps réel de matchs de babyfoot avec gestion des scores, statistiques des joueurs, classements et historique des parties. Interface responsive et temps réel.',
             'tech': ['Python', 'Flask', 'JavaScript', 'SQLite', 'Chart.js'],
             'color': '#f093fb',
-            'image': '/static/projets/footelly.png',
+            'image': 'static/projets/footelly.png',
             # Ajoute ici ton vrai repo si dispo : le bouton "Voir le code" servira de fallback si Render est en veille.
             'github': '#',
             # Render peut être lent au premier chargement (cold start) : le lien fonctionne mais peut prendre 10-30s.
