@@ -35,7 +35,7 @@ portfolio_data = {
         'devops_cloud': [
             {'name': 'Docker', 'level': 85, 'icon': 'fab fa-docker'},
             {'name': 'Kubernetes', 'level': 30, 'icon': 'fas fa-dharmachakra'},
-            {'name': 'AWS', 'level': 60, 'icon': 'fab fa-aws'},
+            {'name': 'AWS', 'level': 40, 'icon': 'fab fa-aws'},
             {'name': 'Google Cloud Platform', 'level': 70, 'icon': 'fab fa-google'},
         ],
         'tools_ide': [
