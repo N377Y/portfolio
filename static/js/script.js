@@ -101,24 +101,34 @@ function updateLanguage(lang) {
     document.querySelectorAll('[data-fr][data-en]').forEach(element => {
         const translation = element.getAttribute(`data-${lang}`);
         if (translation) {
-            // For elements with inner HTML structure, only update text nodes
-            if (element.querySelector('i, span, .line')) {
-                // Find and update text nodes only
-                const walker = document.createTreeWalker(
-                    element,
-                    NodeFilter.SHOW_TEXT,
-                    null,
-                    false
-                );
-                let textNode;
-                while (textNode = walker.nextNode()) {
-                    if (textNode.textContent.trim()) {
-                        textNode.textContent = translation;
-                        break;
-                    }
-                }
+            // Check if translation contains HTML tags
+            if (translation.includes('<')) {
+                // Use innerHTML for HTML content
+                element.innerHTML = translation;
             } else {
-                element.textContent = translation;
+                // For plain text, check if element has children
+                if (element.querySelector('i, .line, .cursor-blink')) {
+                    // Find text nodes and update them
+                    const walker = document.createTreeWalker(
+                        element,
+                        NodeFilter.SHOW_TEXT,
+                        null,
+                        false
+                    );
+                    const textNodes = [];
+                    let node;
+                    while (node = walker.nextNode()) {
+                        if (node.textContent.trim() && node.parentElement === element) {
+                            textNodes.push(node);
+                        }
+                    }
+                    if (textNodes.length > 0) {
+                        textNodes[0].textContent = translation;
+                    }
+                } else {
+                    // Simple text content
+                    element.textContent = translation;
+                }
             }
         }
     });
