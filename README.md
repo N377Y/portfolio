@@ -1,215 +1,239 @@
-# Portfolio - Marie-Ange KUITCHE
+# 🌟 Portfolio - Marie-Ange KUITCHE
 
-A modern, responsive portfolio website showcasing my skills, projects, and professional experience as a Full Stack Developer & QA Test Automation Engineer.
+Portfolio professionnel moderne et interactif présentant mes compétences, expériences et projets.
 
-## 🚀 Features
+## 🚀 Voir le Portfolio en Ligne
 
-- **Modern Design**: Sleek, professional interface with smooth animations
-- **Responsive**: Fully optimized for desktop, tablet, and mobile devices
-- **Interactive**: WebGL background animations and custom cursor effects
-- **Dark Mode**: Toggle between light and dark themes
-- **Project Showcase**: Detailed project cards with modals for extended information
-- **PDF Viewer**: Embedded certifications and CV viewer
-- **Performance**: Optimized loading and lazy-loading for assets
+🌐 **[Visitez mon portfolio](https://marie-angekuitche.github.io/Portfolio/)**
 
-## 🛠️ Tech Stack
+> *Une fois déployé sur GitHub Pages*
 
-- **Backend**: Python, Flask
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Graphics**: Three.js for WebGL effects
-- **Icons**: Font Awesome 6
-- **Fonts**: Google Fonts (Inter, Space Grotesk)
-- **Deployment**: Google Cloud Platform (GCP)
+## 📋 À Propos
 
-## 📦 Installation
+Développeuse Full Stack spécialisée en QA & Test Automation avec une passion pour l'IA et les architectures cloud-natives. Ce portfolio présente:
 
-### Prerequisites
+- 💼 Mon expérience professionnelle
+- 🛠️ Mes compétences techniques (Python, JavaScript, React, Flask, etc.)
+- 🎓 Ma formation et certifications (ISTQB, Google Cloud Digital Leader)
+- 📂 Mes projets récents
+- 📄 Mon CV téléchargeable
 
-- Python 3.8+
-- pip
-- Git
+## 🎨 Fonctionnalités
 
-### Local Setup
+- ✨ Design moderne et épuré avec animations fluides
+- 📱 100% responsive (mobile, tablette, desktop)
+- 🌓 Mode sombre/clair
+- 🎯 Navigation intuitive
+- 🚀 Performance optimisée
+- 🎨 Effets visuels WebGL (Three.js)
+- 📊 Visualisation interactive des compétences
+- 📥 CV téléchargeable en PDF
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/N377Y/portfolio.git
-   cd portfolio
-   ```
+## 🛠️ Technologies Utilisées
 
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On macOS/Linux
-   # or
-   venv\Scripts\activate  # On Windows
-   ```
+### Frontend
+- HTML5, CSS3, JavaScript (ES6+)
+- Three.js pour les effets WebGL
+- Font Awesome pour les icônes
+- AOS (Animate On Scroll) pour les animations
+- Google Fonts (Inter, Space Grotesk)
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Backend (Version Flask - optionnelle)
+- Python 3.11+
+- Flask
+- Jinja2
 
-4. **Run the application**
-   ```bash
-   python main.py
-   ```
+### Déploiement
+- GitHub Pages (version statique)
+- Hébergement gratuit et rapide
 
-5. **Open in browser**
-   Navigate to `http://127.0.0.1:5003`
-
-## 🚀 Deployment to Google Cloud Platform
-
-### Using Cloud Run
-
-1. **Install gcloud CLI**
-   ```bash
-   # Follow instructions at: https://cloud.google.com/sdk/docs/install
-   ```
-
-2. **Initialize gcloud**
-   ```bash
-   gcloud init
-   gcloud auth login
-   ```
-
-3. **Set your project**
-   ```bash
-   gcloud config set project YOUR_PROJECT_ID
-   ```
-
-4. **Deploy to Cloud Run**
-   ```bash
-   gcloud run deploy portfolio \
-     --source . \
-     --platform managed \
-     --region europe-west1 \
-     --allow-unauthenticated
-   ```
-
-### Using App Engine
-
-1. **Create app.yaml**
-   ```yaml
-   runtime: python39
-   entrypoint: gunicorn -b :$PORT main:app
-   ```
-
-2. **Deploy**
-   ```bash
-   gcloud app deploy
-   ```
-
-## 📁 Project Structure
+## 📂 Structure du Projet
 
 ```
-portfolio/
-├── main.py                 # Flask application entry point
-├── config.py              # Configuration settings
-├── requirements.txt       # Python dependencies
-├── Dockerfile            # Docker configuration for deployment
-├── .dockerignore         # Docker ignore rules
-├── .gitignore            # Git ignore rules
-├── README.md             # This file
+Portfolio/
+├── index.html              # Page principale (générée)
 ├── static/
 │   ├── css/
-│   │   └── style.css     # Main stylesheet
+│   │   └── style.css      # Styles personnalisés
 │   ├── js/
-│   │   └── script.js     # JavaScript functionality
+│   │   └── script.js      # JavaScript personnalisé
 │   ├── images/
-│   │   ├── profile.png   # Profile photo
+│   │   ├── profile.png    # Photo de profil
 │   │   └── ...
-│   ├── projets/
-│   │   └── ...           # Project images
-│   ├── certifications/
-│   │   └── ...           # PDF certifications
-│   └── cv/
-│       └── CV_Marie-Ange_KUITCHE.pdf
-└── templates/
-    └── index.html        # Main HTML template
+│   ├── cv/
+│   │   └── CV_Marie-Ange_KUITCHE.pdf
+│   ├── projets/           # Images des projets
+│   │   ├── footelly.png
+│   │   ├── HackAtassa.png
+│   │   └── Optimious.png
+│   └── certifications/    # Certificats PDF
+│       ├── ISTQB.pdf
+│       ├── CloudDigitalLeader.pdf
+│       └── Numerique-responsable.pdf
+├── templates/
+│   └── index.html         # Template Jinja2
+├── main.py                # Application Flask (dev)
+├── generate_static.py     # Script de génération
+├── deploy-github.sh       # Script de déploiement
+├── .nojekyll             # Pour GitHub Pages
+├── _config.yml           # Configuration GitHub Pages
+└── README.md             # Ce fichier
+
 ```
 
-## 🎨 Customization
+## 🚀 Déploiement sur GitHub Pages
 
-### Update Personal Information
+### Prérequis
+- Python 3.11+
+- Git
+- Compte GitHub
 
-Edit `main.py` and modify the `portfolio_data` dictionary:
+### Étapes de Déploiement
 
-```python
-portfolio_data = {
-    'name': 'Your Name',
-    'title': 'Your Title',
-    'bio': 'Your bio...',
-    # ... more fields
-}
-```
+1. **Cloner le repository (ou créer le vôtre)**
+   ```bash
+   git clone https://github.com/VOTRE-USERNAME/Portfolio.git
+   cd Portfolio
+   ```
 
-### Add Projects
+2. **Générer et déployer**
+   ```bash
+   ./deploy-github.sh
+   ```
 
-Add new projects to the `projects` array in `main.py`:
+3. **Configurer GitHub Pages**
+   - Allez sur `https://github.com/VOTRE-USERNAME/Portfolio/settings/pages`
+   - Dans "Source", sélectionnez la branche `main`
+   - Laissez `/ (root)` comme dossier
+   - Cliquez sur "Save"
 
-```python
-{
-    'title': 'Project Name',
-    'description': 'Short description',
-    'tech': ['Python', 'React'],
-    'color': '#667eea',
-    'image': '/static/projets/project.png',
-    'github': 'https://github.com/...',
-    'demo': 'https://...',
-    'details': {
-        'objectif': '...',
-        'features': [...],
-        'challenges': [...],
-        'results': '...'
-    }
-}
-```
+4. **Attendez quelques minutes**
+   - GitHub Pages prend 1-5 minutes pour déployer
+   - Votre site sera disponible à `https://VOTRE-USERNAME.github.io/Portfolio/`
 
-### Change Colors
+## 🔄 Mise à Jour du Portfolio
 
-Update CSS variables in `static/css/style.css`:
+### Modifier le Contenu
+
+1. **Modifier les données** dans `main.py` :
+   ```python
+   portfolio_data = {
+       'name': 'Votre Nom',
+       'title': 'Votre Titre',
+       'bio': 'Votre bio...',
+       # ... autres données
+   }
+   ```
+
+2. **Régénérer le site statique** :
+   ```bash
+   python3 generate_static.py
+   ```
+
+3. **Redéployer** :
+   ```bash
+   git add .
+   git commit -m "Update portfolio content"
+   git push
+   ```
+
+### Modifier le Design
+
+1. Éditez `static/css/style.css` pour les styles
+2. Éditez `static/js/script.js` pour les fonctionnalités
+3. Éditez `templates/index.html` pour la structure
+4. Régénérez avec `python3 generate_static.py`
+
+## 💡 Personnalisation
+
+### Changer les Couleurs
+
+Dans `static/css/style.css`, modifiez les variables CSS :
 
 ```css
 :root {
-    --primary: #6366f1;
-    --secondary: #8b5cf6;
-    --accent: #ec4899;
+    --primary-color: #6366f1;      /* Couleur principale */
+    --secondary-color: #8b5cf6;    /* Couleur secondaire */
+    --accent-color: #ec4899;       /* Couleur d'accent */
     /* ... */
 }
 ```
 
-## 🔧 Environment Variables
+### Ajouter des Projets
 
-For production deployment, set these environment variables:
+Dans `main.py`, ajoutez vos projets :
 
-```bash
-FLASK_ENV=production
-SECRET_KEY=your-secret-key-here
-PORT=8080
+```python
+'projects': [
+    {
+        'title': 'Nom du Projet',
+        'description': 'Description...',
+        'image': '/static/projets/mon-projet.png',
+        'technologies': ['React', 'Python', 'Flask'],
+        'github': 'https://github.com/...',
+        'demo': 'https://...',
+    },
+]
 ```
 
-## 📝 License
+### Mettre à Jour le CV
 
-This project is open source and available under the [MIT License](LICENSE).
+1. Remplacez le fichier `static/cv/CV_Marie-Ange_KUITCHE.pdf`
+2. Ou renommez votre CV et mettez à jour le chemin dans `templates/index.html`
 
-## 👤 Author
+## 📱 Développement Local
 
-**Marie-Ange KUITCHE**
+### Avec Flask (mode développement)
 
-- Email: marie-ange.kuitche@groupe-esigelec.org
-- GitHub: [@N377Y](https://github.com/N377Y)
-- LinkedIn: [Marie-Ange Kuitche](https://www.linkedin.com/in/marie-ange-nelly-kuitche-megouo-a49974226/)
+```bash
+# Installer les dépendances
+pip install -r requirements.txt
 
-## 🤝 Contributing
+# Lancer le serveur
+python main.py
 
-Contributions, issues, and feature requests are welcome!
+# Ouvrir dans le navigateur
+open http://localhost:8080
+```
 
-## ⭐ Show your support
+### Version Statique (pour tester avant déploiement)
 
-Give a ⭐️ if you like this project!
+```bash
+# Générer le site
+python3 generate_static.py
+
+# Ouvrir index.html dans un navigateur
+open index.html
+```
+
+## 🐛 Dépannage
+
+### Le site ne s'affiche pas correctement
+- Vérifiez que tous les fichiers sont bien dans le dossier `static/`
+- Vérifiez les chemins dans `index.html` (doivent être relatifs)
+- Videz le cache du navigateur (Cmd+Shift+R)
+
+### Les images ne chargent pas
+- Vérifiez que les fichiers existent dans `static/images/`, `static/projets/`, etc.
+- Vérifiez que les noms de fichiers correspondent (attention à la casse)
+
+### Le CV ne s'affiche pas
+- Vérifiez que `CV_Marie-Ange_KUITCHE.pdf` existe dans `static/cv/`
+- Note: GitHub Pages est sensible à la casse (contrairement à macOS)
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 📧 Contact
+
+- **Email**: mariemegouo@gmail.com
+- **LinkedIn**: [Marie-Ange KUITCHE](https://www.linkedin.com/in/marie-ange-kuitche/)
+- **GitHub**: [@marie-angekuitche](https://github.com/marie-angekuitche)
 
 ---
 
-*Built with ❤️ using Flask, Three.js, and modern web technologies*
+⭐ Si vous aimez ce portfolio, n'hésitez pas à lui donner une étoile !
+
+**Fait avec ❤️ par Marie-Ange KUITCHE**
 

@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie-Ange KUITCHE - Développeuse Full Stack | QA & Test Automation</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="static/css/style.css?v=3.6">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="loading">
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader-text">Loading<span class="loader-dots"></span></div>
+    </div>
+
+    <!-- WebGL Canvas Background -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <a href="#home" class="logo-link">
+                <span class="logo-text">MK</span>
+            </a>
+        </div>
+        <div class="nav-menu">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#skills" class="nav-item">Skills</a>
+            <a href="#experience" class="nav-item">Experience</a>
+            <a href="#work" class="nav-item">Work</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-subtitle" data-aos="fade-up">
+                <span class="line"></span>
+                <span>Hello, I'm</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                <span class="hero-name">Marie-Ange</span>
+                <span class="hero-surname">KUITCHE</span>
+            </h1>
+            <h2 class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                <span class="typing-text">Développeuse Full Stack | QA & Test Automation</span>
+                <span class="cursor-blink">|</span>
+            </h2>
+            <p class="hero-text" data-aos="fade-up" data-aos-delay="300">
+                Développeuse Full Stack spécialisée QA & Test Automation avec passion pour l'IA et les architectures cloud-natives. J'allie expertise en test automation (ISTQB Advanced Certified) et développement logiciel pour créer des solutions robustes et sécurisées.
+            </p>
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Get in Touch</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#work" class="btn btn-secondary">
+                    <span>View Work</span>
+                    <i class="fas fa-briefcase"></i>
+                </a>
+            </div>
+            <div class="hero-socials" data-aos="fade-up" data-aos-delay="500">
+                <a href="https://github.com/N377Y" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/marie-ange-nelly-kuitche-megouo-a49974226/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:marie-ange.kuitche@groupe-esigelec.org" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll</div>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="lead">Ingénieure logiciel passionnée par l'excellence technique et l'innovation. Mon parcours combine développement Full Stack, qualité logicielle et architecture cloud, avec une expertise particulière en automatisation de tests et en solutions IA pour améliorer les processus métier.</p>
+
+                    <h3 style="margin-top: 30px; margin-bottom: 20px; font-size: 20px; font-weight: 600;">Mon expertise couvre :</h3>
+                    <ul style="list-style: none; padding-left: 0; margin-bottom: 30px;">
+                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #6366f1;">•</span>
+                            <strong>Test Automation & QA :</strong> Tests E2E, fonctionnels, JIRA ticketing, reporting BO
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #8b5cf6;">•</span>
+                            <strong>Full Stack IA :</strong> Python/Flask (backend), React/TypeScript (frontend), GCP (infrastructure)
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #ec4899;">•</span>
+                            <strong>Cloud-Native :</strong> Google Cloud Functions, Cloud Run, Firestore, Docker, CI/CD
+                        </li>
+                    </ul>
+
+                    <p>Actuellement consultante chez Haulogy, je conçois des solutions de test automation pour garantir la qualité des applications critiques. Certifiée ISTQB Advanced Level et Google Cloud Digital Leader, je m'engage à livrer des projets performants et maintenables.</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Années d'expérience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="4">0</div>
+                            <div class="stat-label">Projets innovants</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Technologies maîtrisées</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-wrapper">
+                        <div class="image-gradient"></div>
+                        
+                        <img src="/static/images/profile.png" alt="Marie-Ange KUITCHE" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        
+                        <div class="code-snippet" style="display:none;">
+                            <div class="code-line"><span class="keyword">const</span> developer = {</div>
+                            <div class="code-line indent">name: <span class="string">"Marie-Ange KUITCHE"</span>,</div>
+                            <div class="code-line indent">role: <span class="string">"Développeuse Full Stack | QA & Test Automation"</span>,</div>
+                            <div class="code-line indent">skills: [</div>
+                            <div class="code-line indent2"><span class="string">"Python"</span>, <span class="string">"JavaScript"</span>,</div>
+                            <div class="code-line indent2"><span class="string">"React"</span>, <span class="string">"Flask"</span></div>
+                            <div class="code-line indent">],</div>
+                            <div class="code-line indent">passion: <span class="string">"Building amazing things"</span></div>
+                            <div class="code-line">};</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+
+            
+            <!-- Programming Languages -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-code"></i> Langages de Programmation</h3>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3 class="skill-name">Python</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="95">
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h3 class="skill-name">JavaScript</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="90">
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3 class="skill-name">Java</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">C</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">C++</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3 class="skill-name">HTML/CSS</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="95">
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="350">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-name">SQL</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-layer-group"></i> Frameworks & Bibliothèques</h3>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+                        <div class="skill-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3 class="skill-name">Flask</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="95">
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3 class="skill-name">React</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="90">
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+                        <h3 class="skill-name">Vue.js</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="75">
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon">
+                            <i class="fab fa-node"></i>
+                        </div>
+                        <h3 class="skill-name">Node.js</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- DevOps & Cloud -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3 class="category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+                        <div class="skill-icon">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <h3 class="skill-name">Docker</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fas fa-dharmachakra"></i>
+                        </div>
+                        <h3 class="skill-name">Kubernetes</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="75">
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h3 class="skill-name">AWS</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h3 class="skill-name">Google Cloud Platform</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Tools & IDE -->
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
+                <h3 class="category-title"><i class="fas fa-tools"></i> Outils & IDE</h3>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">VS Code</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="95">
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">PyCharm</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="90">
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">IntelliJ IDEA</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">CLion</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">Eclipse</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="75">
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="skill-name">Git/GitHub</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="90">
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="350">
+                        <div class="skill-icon">
+                            <i class="fab fa-jira"></i>
+                        </div>
+                        <h3 class="skill-name">JIRA</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="90">
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="skill-icon">
+                            <i class="fab fa-confluence"></i>
+                        </div>
+                        <h3 class="skill-name">Confluence</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Testing & QA -->
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
+                <h3 class="category-title"><i class="fas fa-vial"></i> Testing & QA</h3>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="skill-name">Playwright</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="90">
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="skill-name">JasperSoft</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h3 class="skill-name">Xray</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3 class="skill-name">Jam</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="75">
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
+                <h3 class="category-title"><i class="fas fa-database"></i> Bases de Données</h3>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-name">PostgreSQL</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-name">MongoDB</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-name">NoSQL</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- AI Coding Tools -->
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
+                <h3 class="category-title"><i class="fas fa-brain"></i> AI Coding Tools</h3>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="skill-name">Claude Code</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="90">
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="skill-name">GitHub Copilot</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="95">
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <h3 class="skill-name">Manus</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="skill-name">Gemini</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="80">
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="skill-name">GPT Codex</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="85">
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Show More Button -->
+            <div class="skills-show-more" data-aos="fade-up" style="text-align: center; margin-top: 40px;">
+                <button id="skillsToggleBtn" class="btn btn-secondary">
+                    <span id="skillsToggleText">Voir plus</span>
+                    <i id="skillsToggleIcon" class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <section id="soft-skills" class="soft-skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Soft Skills</h2>
+            </div>
+            <div class="soft-skills-grid">
+                
+                <div class="soft-skill-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="soft-skill-icon">
+                        <i class="fas fa-ear-listen"></i>
+                    </div>
+                    <h3 class="soft-skill-name">Écoute active</h3>
+                    <p class="soft-skill-description">Capacité d'écoute attentive pour comprendre les besoins et les attentes des clients et équipes.</p>
+                </div>
+                
+                <div class="soft-skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="soft-skill-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="soft-skill-name">Curiosité</h3>
+                    <p class="soft-skill-description">Soif d'apprendre et de découvrir de nouvelles technologies et approches innovantes.</p>
+                </div>
+                
+                <div class="soft-skill-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="soft-skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="soft-skill-name">Résilience</h3>
+                    <p class="soft-skill-description">Capacité à persévérer face aux défis et à rebondir après les obstacles.</p>
+                </div>
+                
+                <div class="soft-skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="soft-skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="soft-skill-name">Créativité</h3>
+                    <p class="soft-skill-description">Approche créative pour résoudre des problèmes complexes avec des solutions innovantes.</p>
+                </div>
+                
+                <div class="soft-skill-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="soft-skill-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="soft-skill-name">Intelligence émotionnelle</h3>
+                    <p class="soft-skill-description">Compréhension et gestion des émotions pour favoriser de bonnes relations de travail.</p>
+                </div>
+                
+                <div class="soft-skill-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="soft-skill-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="soft-skill-name">Flexibilité et adaptabilité</h3>
+                    <p class="soft-skill-description">Adaptation rapide aux changements et aux nouvelles situations professionnelles.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">Consultante Testing</h3>
+                            <span class="timeline-company">Haulogy, Poitiers</span>
+                            <span class="timeline-period">
+                                <i class="far fa-calendar"></i> Novembre 2023 - Présent
+                            </span>
+                        </div>
+                        <p class="timeline-description">Tests et automatisation pour améliorer la qualité logicielle des applications clients.</p>
+                        
+                        <ul class="timeline-achievements">
+                            
+                            <li>Tests Fonctionnels E2E : Conception et exécution de cas de test fonctionnels, validation règles métier. Couverture : 89% des fonctionnalités critiques</li>
+                            
+                            <li>Support Client & Ticketing JIRA : Gestion tickets utilisateurs, triage, suivi et documentation. Métrique : 94% tickets remontés en SLA (<48h)</li>
+                            
+                            <li>Reporting BO (Jaspersoft & SQL) : Création rapports métier (SQL queries complexes), dashboards Jaspersoft. Impact : Réduction temps reporting manuel de 50%</li>
+                            
+                            <li>Cookbooks de paramétrage : Documentation technique complète pour configuration système, onboarding équipes. Utilisation : 60% des nouvelles configurations l'utilisent (source truth)</li>
+                            
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">Stagiaire en développement Frontend</h3>
+                            <span class="timeline-company">Clarans Afrique, Douala (Afrique CA)</span>
+                            <span class="timeline-period">
+                                <i class="far fa-calendar"></i> Juin 2022 - Août 2022
+                            </span>
+                        </div>
+                        <p class="timeline-description">Apprentissage du développement front-end et création d'applications web interactives.</p>
+                        
+                        <ul class="timeline-achievements">
+                            
+                            <li>Apprentissage du développement front-end, programmation en JavaScript</li>
+                            
+                            <li>Création d'une application web interactive en utilisant du HTML/CSS et JavaScript</li>
+                            
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                
+                <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Ingénieur Développement Logiciel - Test et Qualité</h3>
+                        <p class="education-school">École supérieure d'ingénieurs en génie électrique, France</p>
+                        <span class="education-period">
+                            <i class="far fa-calendar"></i> Septembre 2023 - Présent
+                        </span>
+                        
+                        <p class="education-description">Analyse et conception : Algorithmique et structures, UML et Design Pattern, SQL et NoSQL. Développement logiciel, Architecture et Test : DevOps, POO, TDD et qualité. Qualité logicielle : Assurance, performance et stabilité. Architecture des SI et Cybersécurité. Cloud & DevOps : Programmation système et Infrastructure As a Code, Déploiement et Cloud Computing. Certifications : ISTQB et Numérique Responsable. Management et suivi de projet.</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Prépa Intégrée en Ingénierie Générale</h3>
+                        <p class="education-school">Prepavogt, Yaoundé, Cameroun</p>
+                        <span class="education-period">
+                            <i class="far fa-calendar"></i> Septembre 2021 - Juin 2023
+                        </span>
+                        
+                        <p class="education-description">Formation préparatoire en ingénierie avec fondamentaux scientifiques et techniques.</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                
+                <div class="certification-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3 class="certification-name">ISTQB Certified Tester Advanced Level Test Automation Engineering</h3>
+                            <p class="certification-issuer">ISTQB - International Software Testing Qualifications Board</p>
+                            <span class="certification-date">
+                                <i class="far fa-calendar"></i> 
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="certification-preview">
+                        <iframe src="/static/certifications/ISTQB.pdf#toolbar=0&navpanes=0&scrollbar=0" class="certification-iframe"></iframe>
+                        <div class="certification-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <p class="certification-description">Certification avancée en automatisation des tests et ingénierie de la qualité logicielle.</p>
+                    
+                    
+                    
+                    <div class="certification-actions">
+                        <a href="/static/certifications/ISTQB.pdf" target="_blank" class="certification-link">
+                            <i class="fas fa-external-link-alt"></i> Ouvrir en grand
+                        </a>
+                        <a href="/static/certifications/ISTQB.pdf" download class="certification-link certification-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="certification-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3 class="certification-name">Google Cloud Digital Leader</h3>
+                            <p class="certification-issuer">Google Cloud</p>
+                            <span class="certification-date">
+                                <i class="far fa-calendar"></i> 
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="certification-preview">
+                        <iframe src="/static/certifications/CloudDigitalLeader.pdf#toolbar=0&navpanes=0&scrollbar=0" class="certification-iframe"></iframe>
+                        <div class="certification-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <p class="certification-description">Certification sur les fondamentaux du cloud computing et des services Google Cloud.</p>
+                    
+                    
+                    
+                    <div class="certification-actions">
+                        <a href="/static/certifications/CloudDigitalLeader.pdf" target="_blank" class="certification-link">
+                            <i class="fas fa-external-link-alt"></i> Ouvrir en grand
+                        </a>
+                        <a href="/static/certifications/CloudDigitalLeader.pdf" download class="certification-link certification-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="certification-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3 class="certification-name">Numérique Responsable</h3>
+                            <p class="certification-issuer">Institut du Numérique Responsable</p>
+                            <span class="certification-date">
+                                <i class="far fa-calendar"></i> 
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="certification-preview">
+                        <iframe src="/static/certifications/Numerique-responsable.pdf#toolbar=0&navpanes=0&scrollbar=0" class="certification-iframe"></iframe>
+                        <div class="certification-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <p class="certification-description">Certification sur les bonnes pratiques du numérique responsable et durable.</p>
+                    
+                    
+                    
+                    <div class="certification-actions">
+                        <a href="/static/certifications/Numerique-responsable.pdf" target="_blank" class="certification-link">
+                            <i class="fas fa-external-link-alt"></i> Ouvrir en grand
+                        </a>
+                        <a href="/static/certifications/Numerique-responsable.pdf" download class="certification-link certification-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="projects-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">07</span>
+                <h2 class="section-title">Featured Work</h2>
+            </div>
+            <div class="projects-container">
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-project-index="0" style="cursor: pointer;">
+                    <div class="project-number">01</div>
+                    <div class="project-image" >
+                        
+                        <img src="/static/projets/HackAtassa.png" alt="HackAtassa - Plateforme de gestion de Hackathons" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HackAtassa - Plateforme de gestion de Hackathons</h3>
+                        <p class="project-description">Plateforme complète pour organiser et gérer des hackathons : inscriptions, gestion des équipes, soumissions de projets, évaluations et classements. Interface intuitive pour organisateurs et participants.</p>
+                        <div class="project-tech-stack">
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">React</span>
+                            
+                            <span class="tech-badge">PostgreSQL</span>
+                            
+                            <span class="tech-badge">WebSockets</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-project-index="1" style="cursor: pointer;">
+                    <div class="project-number">02</div>
+                    <div class="project-image" >
+                        
+                        <img src="/static/projets/footelly.png" alt="Footelly - Suivi de matchs de Babyfoot" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Footelly - Suivi de matchs de Babyfoot</h3>
+                        <p class="project-description">Application web de suivi en temps réel de matchs de babyfoot avec gestion des scores, statistiques des joueurs, classements et historique des parties. Interface responsive et temps réel.</p>
+                        <div class="project-tech-stack">
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">JavaScript</span>
+                            
+                            <span class="tech-badge">SQLite</span>
+                            
+                            <span class="tech-badge">Chart.js</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                            <a href="https://footelly.onrender.com/" target="_blank" class="project-link" onclick="event.stopPropagation();">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-project-index="2" style="cursor: pointer;">
+                    <div class="project-number">03</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe40, #4facfe80);">
+                        
+                        <div class="project-overlay"></div>
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Système PACS IA pour Clinique IRM</h3>
+                        <p class="project-description">Conception d'un logiciel open-source inspiré syngo.via/PACS : archivage DICOM, visualisation 3D IRM, IA pour détection anomalies (rapports pré-remplis). Stack : Python (FastAPI/Flask), ML (TensorFlow/MONAI pour IA image), MongoDB (métadonnées), Frontend React.</p>
+                        <div class="project-tech-stack">
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                            <span class="tech-badge">FastAPI</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">TensorFlow</span>
+                            
+                            <span class="tech-badge">MONAI</span>
+                            
+                            <span class="tech-badge">MongoDB</span>
+                            
+                            <span class="tech-badge">React</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-project-index="3" style="cursor: pointer;">
+                    <div class="project-number">04</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #43e97b40, #43e97b80);">
+                        
+                        <div class="project-overlay"></div>
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Plateforme d'onboarding professionnel</h3>
+                        <p class="project-description">Développement d'une plateforme web d'intégration pour nouveaux employés: formations sur le métier et sur les logiciels natifs. Stack : Python/Flask, React, PostgreSQL. API REST pour synchronisation RH.</p>
+                        <div class="project-tech-stack">
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">React</span>
+                            
+                            <span class="tech-badge">PostgreSQL</span>
+                            
+                            <span class="tech-badge">REST API</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500" data-project-index="4" style="cursor: pointer;">
+                    <div class="project-number">05</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea40, #667eea80);">
+                        
+                        <div class="project-overlay"></div>
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Projet d'automatisation des Tests avec Playwright</h3>
+                        <p class="project-description">Conception et implémentation suite de tests automatisés (Playwright) pour tests fonctionnels. Gestion qualité : rapports détaillés, identification anomalies, création automatique de tickets interne.</p>
+                        <div class="project-tech-stack">
+                            
+                            <span class="tech-badge">Playwright</span>
+                            
+                            <span class="tech-badge">JavaScript</span>
+                            
+                            <span class="tech-badge">TypeScript</span>
+                            
+                            <span class="tech-badge">Testing</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="600" data-project-index="5" style="cursor: pointer;">
+                    <div class="project-number">06</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb40, #f093fb80);">
+                        
+                        <div class="project-overlay"></div>
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Outil de gestion administrative pour PME</h3>
+                        <p class="project-description">Développement d'une plateforme complète pour automatiser déclarations administratives (fiscales, sociales, RH, conformité) et veille réglementaire. Stack : Python/Flask, TypeScript/React, Firestore, Docker, GCP.</p>
+                        <div class="project-tech-stack">
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">TypeScript</span>
+                            
+                            <span class="tech-badge">React</span>
+                            
+                            <span class="tech-badge">Firestore</span>
+                            
+                            <span class="tech-badge">Docker</span>
+                            
+                            <span class="tech-badge">GCP</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Modal pour les détails du projet -->
+        <div id="projectModal" class="project-modal">
+            <div class="project-modal-content">
+                <span class="project-modal-close">&times;</span>
+                <div class="project-modal-body">
+                    <div class="project-modal-image">
+                        <img id="modalProjectImage" src="" alt="">
+                    </div>
+                    <div class="project-modal-info">
+                        <h2 id="modalProjectTitle"></h2>
+                        <p id="modalProjectDescription"></p>
+
+                        <!-- Objectif -->
+                        <div class="project-modal-section" id="modalObjectifSection" style="display:none;">
+                            <h4><i class="fas fa-bullseye"></i> Objectif du projet</h4>
+                            <p id="modalProjectObjectif"></p>
+                        </div>
+
+                        <!-- Fonctionnalités clés -->
+                        <div class="project-modal-section" id="modalFeaturesSection" style="display:none;">
+                            <h4><i class="fas fa-star"></i> Fonctionnalités principales</h4>
+                            <ul id="modalProjectFeatures" class="project-features-list"></ul>
+                        </div>
+
+                        <div class="project-modal-tech">
+                            <h4><i class="fas fa-code"></i> Stack technique</h4>
+                            <div id="modalProjectTech"></div>
+                        </div>
+                        <div class="project-modal-links">
+                            <a id="modalProjectGithub" href="#" target="_blank" class="modal-btn modal-btn-github" style="display:none;" onclick="event.stopPropagation();">
+                                <i class="fab fa-github"></i> Voir le code
+                            </a>
+                            <a id="modalProjectDemo" href="#" target="_blank" class="modal-btn modal-btn-demo" style="display:none;" onclick="event.stopPropagation();">
+                                <i class="fas fa-external-link-alt"></i> Voir la démo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="cv-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">08</span>
+                <h2 class="section-title">Curriculum Vitae</h2>
+            </div>
+            <div class="cv-container">
+                <div class="cv-intro" data-aos="fade-up">
+                    <p>
+                        Téléchargez mon CV complet pour en savoir plus sur mon parcours,
+                        mes compétences et mes réalisations professionnelles.
+                    </p>
+                    <div class="cv-actions">
+                        <a href="/static/cv/CV_Marie-Ange_KUITCHE.pdf" download class="cv-btn cv-btn-primary">
+                            <i class="fas fa-download"></i>
+                            <span>Télécharger le CV</span>
+                        </a>
+                        <a href="/static/cv/CV_Marie-Ange_KUITCHE.pdf" target="_blank" class="cv-btn cv-btn-secondary">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ouvrir dans un nouvel onglet
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cv-preview" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cv-iframe-container">
+                        <!-- Option 1: Iframe pour afficher le PDF (décommentez si vous avez un PDF) -->
+                        <iframe src="/static/cv/CV_Marie-Ange_KUITCHE.pdf" class="cv-iframe"></iframe>
+
+                        <!-- Option 2: Placeholder avec instructions
+                        <div class="cv-placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <h3>Aperçu du CV</h3>
+                            <p>Placez votre CV PDF dans le dossier <code>static/cv/</code></p>
+                            <p class="text-small">Nommez-le : <strong>CV_Marie-Ange_KUITCHE.pdf</strong></p>
+                            <p class="text-small">Puis décommentez la ligne iframe ci-dessus dans le code HTML</p>
+                        </div>
+                        -->
+                    </div>
+                </div>
+
+                <div class="cv-stats" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cv-stat-item">
+                        <div class="cv-stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="cv-stat-label">Expérience</div>
+                        <div class="cv-stat-value">3+ ans</div>
+                    </div>
+                    <div class="cv-stat-item">
+                        <div class="cv-stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="cv-stat-label">Projets</div>
+                        <div class="cv-stat-value">4+</div>
+                    </div>
+                    <div class="cv-stat-item">
+                        <div class="cv-stat-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cv-stat-label">Certifications</div>
+                        <div class="cv-stat-value">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">09</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
+                <p class="contact-text">
+                    Je suis actuellement disponible pour de nouveaux projets et opportunités.
+                    N'hésitez pas à me contacter, que ce soit pour discuter d'une collaboration,
+                    d'un projet ou simplement pour échanger !
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:marie-ange.kuitche@groupe-esigelec.org" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-info">
+                            <div class="method-label">Email</div>
+                            <div class="method-value">marie-ange.kuitche@groupe-esigelec.org</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/N377Y" target="_blank" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="method-info">
+                            <div class="method-label">GitHub</div>
+                            <div class="method-value">View Profile</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/marie-ange-nelly-kuitche-megouo-a49974226/" target="_blank" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="method-info">
+                            <div class="method-label">LinkedIn</div>
+                            <div class="method-value">Connect</div>
+                        </div>
+                    </a>
+                </div>
+                <a href="mailto:marie-ange.kuitche@groupe-esigelec.org" class="btn btn-primary btn-large">
+                    <span>Say Hello</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Designed & Built by Marie-Ange KUITCHE</p>
+                <p class="footer-year">© 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Project data for modal functionality
+        window.portfolioProjects = [{"color": "#667eea", "demo": "#", "description": "Plateforme compl\u00e8te pour organiser et g\u00e9rer des hackathons : inscriptions, gestion des \u00e9quipes, soumissions de projets, \u00e9valuations et classements. Interface intuitive pour organisateurs et participants.", "details": {"challenges": ["Gestion des communications temps r\u00e9el entre 100+ participants simultan\u00e9s", "Optimisation des requ\u00eates PostgreSQL pour le classement dynamique", "Architecture scalable pour supporter plusieurs hackathons en parall\u00e8le"], "features": ["Syst\u00e8me d\u0027inscription avec validation automatique", "Formation automatique des \u00e9quipes selon les comp\u00e9tences", "Soumission de projets avec upload de fichiers", "Syst\u00e8me d\u0027\u00e9valuation par jury avec crit\u00e8res personnalisables", "Classement en temps r\u00e9el avec WebSockets", "Dashboard administrateur pour suivi complet"], "objectif": "Cr\u00e9er une plateforme end-to-end pour faciliter l\u0027organisation et la participation aux hackathons, de l\u0027inscription jusqu\u0027au classement final.", "results": "Utilis\u00e9 avec succ\u00e8s pour 3 hackathons (200+ participants). R\u00e9duction de 70% du temps de gestion administrative."}, "github": "#", "image": "/static/projets/HackAtassa.png", "tech": ["Python", "Flask", "React", "PostgreSQL", "WebSockets"], "title": "HackAtassa - Plateforme de gestion de Hackathons"}, {"color": "#f093fb", "demo": "https://footelly.onrender.com/", "description": "Application web de suivi en temps r\u00e9el de matchs de babyfoot avec gestion des scores, statistiques des joueurs, classements et historique des parties. Interface responsive et temps r\u00e9el.", "details": {"challenges": ["Optimisation de l\u0027interface pour saisie rapide des scores pendant les matchs", "Algorithme ELO adapt\u00e9 au babyfoot (\u00e9quipes variables)", "Responsive design pour utilisation sur tablette en bord de table"], "features": ["Enregistrement des matchs en direct avec chronom\u00e8tre int\u00e9gr\u00e9", "Calcul automatique du classement ELO des joueurs", "Statistiques personnelles : ratio victoires/d\u00e9faites, \u00e9volution du score", "Graphiques interactifs avec Chart.js (performances dans le temps)", "Historique complet des parties avec replay d\u00e9taill\u00e9", "Mode tournoi avec brackets et \u00e9limination directe"], "objectif": "Digitaliser et gamifier les matchs de babyfoot en entreprise avec statistiques d\u00e9taill\u00e9es et classements comp\u00e9titifs.", "results": "D\u00e9ploy\u00e9 en production, utilis\u00e9 quotidiennement par 50+ joueurs. Augmentation de 40% de l\u0027engagement des employ\u00e9s."}, "github": "#", "image": "/static/projets/footelly.png", "tech": ["Python", "Flask", "JavaScript", "SQLite", "Chart.js"], "title": "Footelly - Suivi de matchs de Babyfoot"}, {"color": "#4facfe", "demo": "#", "description": "Conception d\u0027un logiciel open-source inspir\u00e9 syngo.via/PACS : archivage DICOM, visualisation 3D IRM, IA pour d\u00e9tection anomalies (rapports pr\u00e9-remplis). Stack : Python (FastAPI/Flask), ML (TensorFlow/MONAI pour IA image), MongoDB (m\u00e9tadonn\u00e9es), Frontend React.", "details": {"challenges": ["Traitement d\u0027images DICOM volumineuses (500+ MB par scan)", "Entra\u00eenement du mod\u00e8le IA avec dataset limit\u00e9 (augmentation de donn\u00e9es)", "Conformit\u00e9 RGPD et s\u00e9curisation des donn\u00e9es m\u00e9dicales sensibles", "Optimisation du rendu 3D pour fluidit\u00e9 dans le navigateur"], "features": ["Import et parsing de fichiers DICOM (images m\u00e9dicales)", "Visualisation 3D interactive des IRM avec reconstruction volum\u00e9trique", "Mod\u00e8le IA (CNN avec MONAI) pour d\u00e9tection tumeurs c\u00e9r\u00e9brales", "G\u00e9n\u00e9ration automatique de rapports pr\u00e9-remplis pour radiologues", "Archivage s\u00e9curis\u00e9 avec MongoDB et chiffrement des donn\u00e9es patient", "Interface web React pour consultation multi-plateforme"], "objectif": "D\u00e9velopper une solution PACS open-source avec IA int\u00e9gr\u00e9e pour d\u00e9tecter automatiquement les anomalies sur les IRM c\u00e9r\u00e9brales.", "results": "Prototype fonctionnel avec 85% de pr\u00e9cision sur la d\u00e9tection. R\u00e9duction estim\u00e9e de 30% du temps d\u0027analyse radiologique."}, "github": "#", "image": null, "tech": ["Python", "FastAPI", "Flask", "TensorFlow", "MONAI", "MongoDB", "React"], "title": "Syst\u00e8me PACS IA pour Clinique IRM"}, {"color": "#43e97b", "demo": "#", "description": "D\u00e9veloppement d\u0027une plateforme web d\u0027int\u00e9gration pour nouveaux employ\u00e9s: formations sur le m\u00e9tier et sur les logiciels natifs. Stack : Python/Flask, React, PostgreSQL. API REST pour synchronisation RH.", "details": {"challenges": ["Int\u00e9gration avec syst\u00e8me RH legacy (API SOAP vers REST)", "Gestion de contenu multimedia lourd (compression, CDN)", "Personnalisation dynamique selon 50+ profils de poste diff\u00e9rents"], "features": ["Parcours d\u0027onboarding personnalis\u00e9s selon le poste", "Modules de formation interactifs (vid\u00e9os, quiz, exercices)", "Suivi de progression en temps r\u00e9el pour RH et managers", "Synchronisation automatique avec le SIRH via API REST", "Attribution automatique des acc\u00e8s et licences logicielles", "Dashboard analytics pour optimiser les parcours"], "objectif": "Automatiser et standardiser le processus d\u0027int\u00e9gration des nouveaux employ\u00e9s avec parcours personnalis\u00e9s.", "results": "R\u00e9duction de 60% du temps d\u0027onboarding (de 2 semaines \u00e0 5 jours). Taux de satisfaction de 92%."}, "github": "#", "image": null, "tech": ["Python", "Flask", "React", "PostgreSQL", "REST API"], "title": "Plateforme d\u0027onboarding professionnel"}, {"color": "#667eea", "demo": "#", "description": "Conception et impl\u00e9mentation suite de tests automatis\u00e9s (Playwright) pour tests fonctionnels. Gestion qualit\u00e9 : rapports d\u00e9taill\u00e9s, identification anomalies, cr\u00e9ation automatique de tickets interne.", "details": {"challenges": ["Gestion des tests asynchrones et des temps d\u0027attente dynamiques", "Stabilisation des tests flaky (taux de fiabilit\u00e9 \u003e 98%)", "Optimisation parall\u00e9lisation pour r\u00e9duire temps ex\u00e9cution (30 min \u2192 8 min)", "Maintenance de la suite avec \u00e9volutions fr\u00e9quentes de l\u0027application"], "features": ["Suite de 200+ tests automatis\u00e9s couvrant parcours critiques", "Tests cross-browser (Chrome, Firefox, Safari, Edge)", "Tests responsive sur diff\u00e9rentes r\u00e9solutions", "Rapports HTML d\u00e9taill\u00e9s avec screenshots et vid\u00e9os des \u00e9checs", "Int\u00e9gration CI/CD avec GitLab (d\u00e9clenchement automatique)", "Cr\u00e9ation automatique de tickets Jira pour bugs d\u00e9tect\u00e9s"], "objectif": "Mettre en place une suite de tests E2E automatis\u00e9e pour garantir la qualit\u00e9 et r\u00e9duire les r\u00e9gressions.", "results": "D\u00e9tection de 45+ bugs critiques avant production. Couverture de tests pass\u00e9e de 30% \u00e0 85%. ROI de 3 mois."}, "github": "#", "image": null, "tech": ["Playwright", "JavaScript", "TypeScript", "Testing"], "title": "Projet d\u0027automatisation des Tests avec Playwright"}, {"color": "#f093fb", "demo": "#", "description": "D\u00e9veloppement d\u0027une plateforme compl\u00e8te pour automatiser d\u00e9clarations administratives (fiscales, sociales, RH, conformit\u00e9) et veille r\u00e9glementaire. Stack : Python/Flask, TypeScript/React, Firestore, Docker, GCP.", "details": {"challenges": ["Adaptation aux \u00e9volutions l\u00e9gislatives fr\u00e9quentes", "Gestion de la complexit\u00e9 r\u00e9glementaire (200+ types de d\u00e9clarations)", "S\u00e9curisation maximale (donn\u00e9es financi\u00e8res sensibles)", "Architecture multi-tenant pour servir 100+ PME simultan\u00e9ment"], "features": ["Automatisation des d\u00e9clarations fiscales (TVA, IS, CFE)", "Gestion RH : d\u00e9clarations sociales, DSN, contrats", "Veille r\u00e9glementaire avec alertes sur changements l\u00e9gislatifs", "G\u00e9n\u00e9ration automatique de documents conformes", "Tableau de bord avec rappels et \u00e9ch\u00e9ances", "Export comptable vers logiciels tiers (Sage, Cegid)"], "objectif": "Simplifier la gestion administrative des PME en automatisant les d\u00e9clarations obligatoires et la veille r\u00e9glementaire.", "results": "Plateforme utilis\u00e9e par 35 PME. R\u00e9duction de 80% du temps administratif. Z\u00e9ro erreur de d\u00e9claration sur 6 mois."}, "github": "#", "image": null, "tech": ["Python", "Flask", "TypeScript", "React", "Firestore", "Docker", "GCP"], "title": "Outil de gestion administrative pour PME"}];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

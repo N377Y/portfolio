@@ -6,8 +6,13 @@ __pycache__/
 .Python
 venv/
 .venv/
-ENV/
 env/
+ENV/
+*.pyc
+
+# Flask
+instance/
+.webassets-cache
 
 # IDEs
 .vscode/
@@ -15,25 +20,30 @@ env/
 *.swp
 *.swo
 *~
+.DS_Store
 
 # OS
-.DS_Store
 Thumbs.db
 
-# Environment
-.env
-.env.local
+# GCP - On ne veut plus de ces fichiers
+app.yaml
+Dockerfile
+deploy.sh
+fix-permissions.sh
+redeploy.sh
+FIX_CV_ISSUE.md
+DEPLOYMENT.md
+TROUBLESHOOTING.md
+QUICK_DEPLOY.md
+verify.sh
+commands.sh
 
-# Build
-build/
-dist/
-*.egg-info/
+# Development files - keep for reference but don't need on GitHub Pages
+main.py
+generate_static.py
+requirements.txt
+config.py
 
 # Logs
 *.log
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
 

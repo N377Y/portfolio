@@ -6,7 +6,7 @@
     <title>{{ data.name }} - {{ data.title }}</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=3.6">
+    <link rel="stylesheet" href="static/css/style.css?v=3.6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Fonts -->
@@ -127,7 +127,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-text" data-aos="fade-right">
-                    <p class="lead">Développeuse Full Stack spécialisée QA & Test Automation avec passion pour l'IA et les architectures cloud-natives. J'allie expertise en test automation (ISTQB Advanced Certified) et développement logiciel pour créer des solutions robustes et sécurisées.</p>
+                    <p class="lead">Ingénieure logiciel passionnée par l'excellence technique et l'innovation. Mon parcours combine développement Full Stack, qualité logicielle et architecture cloud, avec une expertise particulière en automatisation de tests et en solutions IA pour améliorer les processus métier.</p>
 
                     <h3 style="margin-top: 30px; margin-bottom: 20px; font-size: 20px; font-weight: 600;">Mon expertise couvre :</h3>
                     <ul style="list-style: none; padding-left: 0; margin-bottom: 30px;">
@@ -145,7 +145,7 @@
                         </li>
                     </ul>
 
-                    <p>Je suis passionnée par la qualité logicielle, l'IA appliquée et les défis tech cross-domaines (healthtech, fintech, admin automation).</p>
+                    <p>Actuellement consultante chez Haulogy, je conçois des solutions de test automation pour garantir la qualité des applications critiques. Certifiée ISTQB Advanced Level et Google Cloud Digital Leader, je m'engage à livrer des projets performants et maintenables.</p>
 
                     <div class="stats-grid">
                         <div class="stat-item">
@@ -261,7 +261,7 @@
             </div>
 
             <!-- Tools & IDE -->
-            <div class="skills-category" data-aos="fade-up">
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
                 <h3 class="category-title"><i class="fas fa-tools"></i> Outils & IDE</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.tools_ide %}
@@ -283,7 +283,7 @@
             </div>
 
             <!-- Testing & QA -->
-            <div class="skills-category" data-aos="fade-up">
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
                 <h3 class="category-title"><i class="fas fa-vial"></i> Testing & QA</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.testing_qa %}
@@ -305,7 +305,7 @@
             </div>
 
             <!-- Databases -->
-            <div class="skills-category" data-aos="fade-up">
+            <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
                 <h3 class="category-title"><i class="fas fa-database"></i> Bases de Données</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.databases %}
@@ -628,11 +628,11 @@
                         mes compétences et mes réalisations professionnelles.
                     </p>
                     <div class="cv-actions">
-                        <a href="/static/cv/CV_Marie-Ange_Kuitche.pdf" download class="cv-btn cv-btn-primary">
+                        <a href="/static/cv/CV_Marie-Ange_KUITCHE.pdf" download class="cv-btn cv-btn-primary">
                             <i class="fas fa-download"></i>
-                            Télécharger le CV (PDF)
+                            <span>Télécharger le CV</span>
                         </a>
-                        <a href="/static/cv/CV_Marie-Ange_Kuitche.pdf" target="_blank" class="cv-btn cv-btn-secondary">
+                        <a href="/static/cv/CV_Marie-Ange_KUITCHE.pdf" target="_blank" class="cv-btn cv-btn-secondary">
                             <i class="fas fa-external-link-alt"></i>
                             Ouvrir dans un nouvel onglet
                         </a>
@@ -642,14 +642,14 @@
                 <div class="cv-preview" data-aos="fade-up" data-aos-delay="100">
                     <div class="cv-iframe-container">
                         <!-- Option 1: Iframe pour afficher le PDF (décommentez si vous avez un PDF) -->
-                        <iframe src="/static/cv/CV_Marie-Ange_Kuitche.pdf" class="cv-iframe"></iframe>
+                        <iframe src="/static/cv/CV_Marie-Ange_KUITCHE.pdf" class="cv-iframe"></iframe>
 
                         <!-- Option 2: Placeholder avec instructions
                         <div class="cv-placeholder">
                             <i class="fas fa-file-pdf"></i>
                             <h3>Aperçu du CV</h3>
                             <p>Placez votre CV PDF dans le dossier <code>static/cv/</code></p>
-                            <p class="text-small">Nommez-le : <strong>CV_Marie-Ange_Kuitche.pdf</strong></p>
+                            <p class="text-small">Nommez-le : <strong>CV_Marie-Ange_KUITCHE.pdf</strong></p>
                             <p class="text-small">Puis décommentez la ligne iframe ci-dessus dans le code HTML</p>
                         </div>
                         -->
@@ -749,6 +749,6 @@
         window.portfolioProjects = {{ data.projects | tojson | safe }};
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
