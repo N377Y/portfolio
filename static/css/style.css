@@ -336,6 +336,30 @@ body.dark-mode .nav.scrolled {
     gap: 40px;
 }
 
+/* Mobile nav overlay */
+.nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    right: 20px;
+    padding: 20px;
+    background: var(--bg-primary);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    gap: 16px;
+    z-index: 999;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 .nav-item {
     color: var(--text-secondary);
     text-decoration: none;
@@ -2127,6 +2151,39 @@ section {
 }
 
 @media (max-width: 768px) {
+    .nav {
+        padding: 20px 24px;
+    }
+
+    .hero-section,
+    section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 10vw, 56px);
+    }
+
+    .hero-description {
+        font-size: clamp(18px, 5vw, 28px);
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn,
+    .btn-large {
+        width: 100%;
+        justify-content: center;
+    }
+
     .nav-menu {
         display: none;
     }
@@ -2135,59 +2192,67 @@ section {
         display: flex;
     }
 
-    .hero-cta {
-        flex-direction: column;
-    }
-
     .stats-grid {
         grid-template-columns: 1fr;
     }
 
-    .scroll-indicator {
-        display: none;
+    .skills-grid,
+    .soft-skills-grid,
+    .education-grid,
+    .activities-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .project-description {
+        font-size: 15px;
+    }
+
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-method {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .cv-preview {
+        padding: 20px;
+    }
+
+    .cv-iframe-container {
+        padding-bottom: 150%;
+    }
+
+    .timeline::before {
+        left: 12px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-marker {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
     }
 
     .footer-content {
         flex-direction: column;
         gap: 15px;
-    }
-
-    .timeline::before {
-        left: 15px;
-    }
-
-    .timeline-item {
-        padding-left: 50px;
-    }
-
-    .timeline-marker {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-
-    .education-grid,
-    .activities-grid,
-    .soft-skills-grid,
-    .certifications-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .education-card {
-        flex-direction: column;
-    }
-
-    .cv-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .cv-btn {
-        justify-content: center;
-    }
-
-    .cv-stats {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -2203,6 +2268,62 @@ section {
 [data-aos].aos-animate {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* =========================================
+   PROJECT MODAL (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .project-modal-content {
+        width: 92%;
+        margin: 5% auto;
+    }
+
+    .project-modal-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 16px 18px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+    }
+
+    .hero-socials {
+        gap: 12px;
+    }
+
+    .social-link {
+        width: 38px;
+        height: 38px;
+    }
+
+    .section-title {
+        font-size: clamp(26px, 7vw, 40px);
+    }
+
+    .category-title {
+        font-size: 20px;
+    }
+
+    .skill-item,
+    .soft-skill-card,
+    .education-card,
+    .certification-card {
+        padding: 20px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-number {
+        font-size: 56px;
+    }
 }
 
 /* ============================================
