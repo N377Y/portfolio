@@ -73,16 +73,6 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// ============================================
-// LANGUAGE TOGGLE
-// ============================================
-const langToggle = document.getElementById('langToggle');
-
-langToggle?.addEventListener('click', () => {
-    const currentLang = window.i18n.getCurrentLanguage();
-    const newLang = currentLang === 'fr' ? 'en' : 'fr';
-    window.i18n.changeLanguage(newLang);
-});
 
 // ============================================
 // NAVIGATION

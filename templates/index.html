@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="loader-text" data-fr="Chargement" data-en="Loading">Chargement<span class="loader-dots"></span></div>
+        <div class="loader-text">Chargement<span class="loader-dots"></span></div>
     </div>
 
     <!-- WebGL Canvas Background -->
@@ -56,17 +56,13 @@
             </a>
         </div>
         <div class="nav-menu">
-            <a href="#home" class="nav-item active" data-fr="Accueil" data-en="Home">Accueil</a>
-            <a href="#about" class="nav-item" data-fr="À propos" data-en="About">À propos</a>
-            <a href="#skills" class="nav-item" data-fr="Compétences" data-en="Skills">Compétences</a>
-            <a href="#experience" class="nav-item" data-fr="Expérience" data-en="Experience">Expérience</a>
-            <a href="#work" class="nav-item" data-fr="Projets" data-en="Work">Projets</a>
-            <a href="#contact" class="nav-item" data-fr="Contact" data-en="Contact">Contact</a>
+            <a href="#home" class="nav-item active">Accueil</a>
+            <a href="#about" class="nav-item">À propos</a>
+            <a href="#skills" class="nav-item">Compétences</a>
+            <a href="#experience" class="nav-item">Expérience</a>
+            <a href="#work" class="nav-item">Projets</a>
+            <a href="#contact" class="nav-item">Contact</a>
         </div>
-        <button class="lang-toggle" id="langToggle" title="Changer de langue / Switch language">
-            <i class="fas fa-globe"></i>
-            <span class="lang-text">FR</span>
-        </button>
         <button class="theme-toggle" id="themeToggle">
             <i class="fas fa-moon"></i>
         </button>
@@ -81,26 +77,26 @@
         <div class="hero-content">
             <div class="hero-subtitle" data-aos="fade-up">
                 <span class="line"></span>
-                <span data-i18n="hero.greeting">Bonjour, je suis</span>
+                <span>Bonjour, je suis</span>
             </div>
             <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
                 <span class="hero-name">{{ data.name.split()[0] }}</span>
                 <span class="hero-surname">{{ data.name.split()[1] if data.name.split()|length > 1 else '' }}</span>
             </h1>
             <h2 class="hero-description" data-aos="fade-up" data-aos-delay="200">
-                <span class="typing-text" data-i18n="hero.title">{{ data.title }}</span>
+                <span class="typing-text">{{ data.title }}</span>
                 <span class="cursor-blink">|</span>
             </h2>
-            <p class="hero-text" data-aos="fade-up" data-aos-delay="300" data-i18n="hero.bio">
+            <p class="hero-text" data-aos="fade-up" data-aos-delay="300">
                 {{ data.bio }}
             </p>
             <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
                 <a href="#contact" class="btn btn-primary">
-                    <span data-i18n="hero.cta_contact">Me contacter</span>
+                    <span>Me contacter</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
                 <a href="#work" class="btn btn-secondary">
-                    <span data-i18n="hero.cta_work">Voir mes projets</span>
+                    <span>Voir mes projets</span>
                     <i class="fas fa-briefcase"></i>
                 </a>
             </div>
@@ -117,7 +113,7 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <div class="scroll-text">Scroll</div>
+            <div class="scroll-text">Défiler</div>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -127,7 +123,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">01</span>
-                <h2 class="section-title" data-i18n="sections.about">À propos de moi</h2>
+                <h2 class="section-title">À propos de moi</h2>
             </div>
             <div class="about-grid">
                 <div class="about-text" data-aos="fade-right">
@@ -162,7 +158,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-number" data-target="10">0</div>
-                            <div class="stat-label" data-fr="Technologies maîtrisées" data-en="Technologies mastered">Technologies maîtrisées</div>
+                            <div class="stat-label">Technologies maîtrisées</div>
                         </div>
                     </div>
                 </div>
@@ -183,13 +179,13 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">02</span>
-                <h2 class="section-title" data-i18n="sections.skills">Compétences techniques</h2>
+                <h2 class="section-title">Compétences techniques</h2>
             </div>
 
             {% if data.skills_by_category %}
             <!-- Programming Languages -->
             <div class="skills-category" data-aos="fade-up">
-                <h3 class="category-title"><i class="fas fa-code"></i> <span data-fr="Langages de Programmation" data-en="Programming Languages">Langages de Programmation</span></h3>
+                <h3 class="category-title"><i class="fas fa-code"></i> Langages de Programmation</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.programming %}
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
@@ -211,7 +207,7 @@
 
             <!-- Frameworks -->
             <div class="skills-category" data-aos="fade-up">
-                <h3 class="category-title"><i class="fas fa-layer-group"></i> <span data-fr="Frameworks & Bibliothèques" data-en="Frameworks & Libraries">Frameworks & Bibliothèques</span></h3>
+                <h3 class="category-title"><i class="fas fa-layer-group"></i> Frameworks & Bibliothèques</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.frameworks %}
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
@@ -233,7 +229,7 @@
 
             <!-- DevOps & Cloud -->
             <div class="skills-category" data-aos="fade-up">
-                <h3 class="category-title"><i class="fas fa-cloud"></i> <span data-fr="DevOps & Cloud" data-en="DevOps & Cloud">DevOps & Cloud</span></h3>
+                <h3 class="category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.devops_cloud %}
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
@@ -255,7 +251,7 @@
 
             <!-- Tools & IDE -->
             <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
-                <h3 class="category-title"><i class="fas fa-tools"></i> <span data-fr="Outils & IDE" data-en="Tools & IDE">Outils & IDE</span></h3>
+                <h3 class="category-title"><i class="fas fa-tools"></i> Outils & IDE</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.tools_ide %}
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
@@ -277,7 +273,7 @@
 
             <!-- Testing & QA -->
             <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
-                <h3 class="category-title"><i class="fas fa-vial"></i> <span data-fr="Testing & QA" data-en="Testing & QA">Testing & QA</span></h3>
+                <h3 class="category-title"><i class="fas fa-vial"></i> Testing & QA</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.testing_qa %}
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
@@ -299,7 +295,7 @@
 
             <!-- Databases -->
             <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
-                <h3 class="category-title"><i class="fas fa-database"></i> <span data-fr="Bases de Données" data-en="Databases">Bases de Données</span></h3>
+                <h3 class="category-title"><i class="fas fa-database"></i> Bases de Données</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.databases %}
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
@@ -321,7 +317,7 @@
 
             <!-- AI Coding Tools -->
             <div class="skills-category skills-extra-category" data-aos="fade-up" style="display: none;">
-                <h3 class="category-title"><i class="fas fa-brain"></i> <span data-fr="Outils IA pour le Coding" data-en="AI Coding Tools">Outils IA pour le Coding</span></h3>
+                <h3 class="category-title"><i class="fas fa-brain"></i> Outils IA pour le Coding</h3>
                 <div class="skills-grid">
                     {% for skill in data.skills_by_category.ai_coding_tools %}
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
@@ -377,7 +373,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">03</span>
-                <h2 class="section-title" data-i18n="sections.softskills">Compétences comportementales</h2>
+                <h2 class="section-title">Compétences comportementales</h2>
             </div>
             <div class="soft-skills-grid">
                 {% for soft_skill in data.soft_skills %}
@@ -385,8 +381,8 @@
                     <div class="soft-skill-icon">
                         <i class="{{ soft_skill.icon }}"></i>
                     </div>
-                    <h3 class="soft-skill-name" data-fr="{{ soft_skill.name }}" data-en="{{ soft_skill.name_en }}">{{ soft_skill.name }}</h3>
-                    <p class="soft-skill-description" data-fr="{{ soft_skill.description }}" data-en="{{ soft_skill.description_en }}">{{ soft_skill.description }}</p>
+                    <h3 class="soft-skill-name">{{ soft_skill.name }}</h3>
+                    <p class="soft-skill-description">{{ soft_skill.description }}</p>
                 </div>
                 {% endfor %}
             </div>
@@ -398,7 +394,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">04</span>
-                <h2 class="section-title" data-i18n="sections.experience">Expérience professionnelle</h2>
+                <h2 class="section-title">Expérience professionnelle</h2>
             </div>
             <div class="timeline">
                 {% for exp in data.experiences %}
@@ -434,7 +430,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">05</span>
-                <h2 class="section-title" data-i18n="sections.education">Formation</h2>
+                <h2 class="section-title">Formation</h2>
             </div>
             <div class="education-grid">
                 {% for edu in data.education %}
@@ -463,7 +459,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">06</span>
-                <h2 class="section-title" data-i18n="sections.certifications">Certifications</h2>
+                <h2 class="section-title">Certifications</h2>
             </div>
             <div class="certifications-grid">
                 {% for cert in data.certifications %}
@@ -524,7 +520,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">07</span>
-                <h2 class="section-title" data-i18n="sections.work">Projets en vedette</h2>
+                <h2 class="section-title">Projets en vedette</h2>
             </div>
             <div class="projects-container">
                 {% for project in data.projects %}
@@ -555,7 +551,7 @@
                             {% if project.demo and project.demo != '#' %}
                             <a href="{{ project.demo }}" target="_blank" class="project-link" onclick="event.stopPropagation();">
                                 <i class="fas fa-external-link-alt"></i>
-                                <span>Live Demo</span>
+                                <span>Voir la démo</span>
                             </a>
                             {% endif %}
                         </div>
@@ -612,22 +608,22 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">08</span>
-                <h2 class="section-title" data-i18n="sections.cv">Curriculum Vitae</h2>
+                <h2 class="section-title">Curriculum Vitae</h2>
             </div>
             <div class="cv-container">
                 <div class="cv-intro" data-aos="fade-up">
-                    <p data-fr="Téléchargez mon CV complet pour en savoir plus sur mon parcours, mes compétences et mes réalisations professionnelles." data-en="Download my complete CV to learn more about my background, skills and professional achievements.">
+                    <p>
                         Téléchargez mon CV complet pour en savoir plus sur mon parcours,
                         mes compétences et mes réalisations professionnelles.
                     </p>
                     <div class="cv-actions">
                         <a href="static/cv/CV_Marie-Ange_KUITCHE.pdf" download class="cv-btn cv-btn-primary">
                             <i class="fas fa-download"></i>
-                            <span data-fr="Télécharger le CV" data-en="Download CV">Télécharger le CV</span>
+                            <span>Télécharger le CV</span>
                         </a>
                         <a href="static/cv/CV_Marie-Ange_KUITCHE.pdf" target="_blank" class="cv-btn cv-btn-secondary">
                             <i class="fas fa-external-link-alt"></i>
-                            <span data-fr="Ouvrir dans un nouvel onglet" data-en="Open in new tab">Ouvrir dans un nouvel onglet</span>
+                            <span>Ouvrir dans un nouvel onglet</span>
                         </a>
                     </div>
                 </div>
@@ -681,10 +677,10 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">09</span>
-                <h2 class="section-title" data-i18n="sections.contact">Me contacter</h2>
+                <h2 class="section-title">Me contacter</h2>
             </div>
             <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
-                <p class="contact-text" data-fr="Je suis actuellement disponible pour de nouveaux projets et opportunités. N'hésitez pas à me contacter, que ce soit pour discuter d'une collaboration, d'un projet ou simplement pour échanger !" data-en="I'm currently available for new projects and opportunities. Feel free to contact me, whether it's to discuss a collaboration, a project, or just to chat!">
+                <p class="contact-text">
                     Je suis actuellement disponible pour de nouveaux projets et opportunités.
                     N'hésitez pas à me contacter, que ce soit pour discuter d'une collaboration,
                     d'un projet ou simplement pour échanger !
@@ -705,7 +701,7 @@
                         </div>
                         <div class="method-info">
                             <div class="method-label">GitHub</div>
-                            <div class="method-value">View Profile</div>
+                            <div class="method-value">Profil GitHub</div>
                         </div>
                     </a>
                     <a href="{{ data.contact.linkedin }}" target="_blank" class="contact-method">
@@ -714,12 +710,12 @@
                         </div>
                         <div class="method-info">
                             <div class="method-label">LinkedIn</div>
-                            <div class="method-value">Connect</div>
+                            <div class="method-value">Se connecter</div>
                         </div>
                     </a>
                 </div>
                 <a href="mailto:{{ data.contact.email }}" class="btn btn-primary btn-large">
-                    <span>Say Hello</span>
+                    <span>Dire bonjour</span>
                     <i class="fas fa-paper-plane"></i>
                 </a>
             </div>
@@ -730,7 +726,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>Designed & Built by {{ data.name }}</p>
+                <p>Conçu et développé par {{ data.name }}</p>
                 <p class="footer-year">© 2026</p>
             </div>
         </div>

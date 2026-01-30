@@ -6,6 +6,7 @@ from jinja2 import Template
 import json
 import shutil
 import os
+import re
 
 # Import des données du portfolio depuis main.py
 import sys
@@ -26,6 +27,9 @@ def generate_static_site():
 
     # Rendre le template avec les données
     html_output = template.render(data=portfolio_data)
+
+    # Nettoyer les attributs data-* i18n restants dans le HTML rendu
+    html_output = re.sub(r'\sdata-(fr|en|i18n)="[^"]*"', '', html_output)
 
     # Créer le fichier index.html à la racine
     with open('index.html', 'w', encoding='utf-8') as f:
@@ -61,4 +65,3 @@ theme: null
 
 if __name__ == '__main__':
     generate_static_site()
-
