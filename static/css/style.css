@@ -302,18 +302,28 @@ body.dark-mode #webgl-canvas {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.4s var(--ease-smooth);
+}
+
+body.dark-mode .nav {
+    background: rgba(10, 10, 10, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav.scrolled {
     padding: 20px 60px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     box-shadow: var(--shadow-sm);
 }
 
 body.dark-mode .nav.scrolled {
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(10, 10, 10, 0.92);
 }
 
 .nav-logo .logo-link {
