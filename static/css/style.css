@@ -766,6 +766,10 @@ section {
     background: transparent;
     border-radius: 50%;
     box-shadow: none;
+    /* Cap the photo size on large screens so it doesn't grow too big */
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image-gradient {
@@ -2178,6 +2182,19 @@ section {
         grid-template-columns: 1fr;
     }
 
+    /* Show profile photo BEFORE the about text on tablet/mobile, and keep it smaller */
+    .about-grid {
+        gap: 40px;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .image-wrapper {
+        max-width: 260px;
+    }
+
     .project-card:nth-child(even) .project-image {
         order: 1;
     }
@@ -2202,10 +2219,26 @@ section {
         padding: 20px 24px;
     }
 
+    /* On mobile, anchor hero content to the top so a tall hero (typing animation,
+       wrapping description, stacked CTAs) can never push the top of the content
+       (e.g. "Bonjour, je suis") behind the fixed nav */
+    .hero-section {
+        align-items: flex-start;
+        padding-top: 110px;
+        padding-bottom: 40px;
+        min-height: auto;
+    }
+
     .hero-section,
     section {
         padding-left: 24px;
         padding-right: 24px;
+    }
+
+    /* Hide the vertical "Défiler" indicator on phones — it overlaps with the hero
+       content / next section when the viewport is short */
+    .scroll-indicator {
+        display: none;
     }
 
     .hero-title {
@@ -2252,9 +2285,31 @@ section {
         gap: 20px;
     }
 
+    /* Profile photo even smaller on phones */
+    .image-wrapper {
+        max-width: 220px;
+    }
+
+    /* Project cards: tighter padding, smaller header number, full-width image */
     .project-card {
-        padding: 24px;
-        gap: 20px;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .project-number {
+        font-size: 56px;
+        top: 12px;
+        right: 16px;
+    }
+
+    .project-title {
+        font-size: 22px;
+        padding-right: 60px; /* avoid overlap with the big number */
+    }
+
+    .project-image {
+        min-height: 200px;
+        height: auto;
     }
 
     .project-description {
