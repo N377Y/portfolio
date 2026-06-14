@@ -201,6 +201,24 @@ portfolio_data = {
             'link': 'static/certifications/Numerique-responsable.pdf',
             'pdf_file': 'static/certifications/Numerique-responsable.pdf'
         },
+        {
+            'name': 'HashiCorp Certified: Terraform Associate (003)',
+            'issuer': 'HashiCorp',
+            'icon': 'fas fa-cube',
+            'description': 'Certification officielle HashiCorp validant la maîtrise de Terraform pour l\'Infrastructure as Code (IaC) : provisioning multi-cloud, gestion des states, modules réutilisables et workflows CI/CD.',
+            'credential_id': None,
+            'link': 'static/certifications/TerraformAssociate004.pdf',
+            'pdf_file': 'static/certifications/TerraformAssociate004.pdf'
+        },
+        {
+            'name': 'TOEIC - Test of English for International Communication',
+            'issuer': 'ETS Global',
+            'icon': 'fas fa-language',
+            'description': 'Certification officielle d\'anglais professionnel attestant d\'un niveau avancé en compréhension orale et écrite, indispensable pour évoluer dans des environnements internationaux.',
+            'credential_id': None,
+            'link': 'static/certifications/Toeic.pdf',
+            'pdf_file': 'static/certifications/Toeic.pdf'
+        },
     ],
     'activities': [
         # Les activités et hackathons peuvent être ajoutés ici si nécessaire
@@ -297,59 +315,6 @@ portfolio_data = {
             }
         },
         {
-            'title': 'Système PACS IA pour Clinique IRM',
-            'description': 'Conception d\'un logiciel open-source inspiré syngo.via/PACS : archivage DICOM, visualisation 3D IRM, IA pour détection anomalies (rapports pré-remplis). Stack : Python (FastAPI/Flask), ML (TensorFlow/MONAI pour IA image), MongoDB (métadonnées), Frontend React.',
-            'tech': ['Python', 'FastAPI', 'Flask', 'TensorFlow', 'MONAI', 'MongoDB', 'React'],
-            'color': '#4facfe',
-            'image': None,
-            'github': '#',
-            'demo': '#',
-            'details': {
-                'objectif': 'Développer une solution PACS open-source avec IA intégrée pour détecter automatiquement les anomalies sur les IRM cérébrales.',
-                'features': [
-                    'Import et parsing de fichiers DICOM (images médicales)',
-                    'Visualisation 3D interactive des IRM avec reconstruction volumétrique',
-                    'Modèle IA (CNN avec MONAI) pour détection tumeurs cérébrales',
-                    'Génération automatique de rapports pré-remplis pour radiologues',
-                    'Archivage sécurisé avec MongoDB et chiffrement des données patient',
-                    'Interface web React pour consultation multi-plateforme'
-                ],
-                'challenges': [
-                    'Traitement d\'images DICOM volumineuses (500+ MB par scan)',
-                    'Entraînement du modèle IA avec dataset limité (augmentation de données)',
-                    'Conformité RGPD et sécurisation des données médicales sensibles',
-                    'Optimisation du rendu 3D pour fluidité dans le navigateur'
-                ],
-                'results': 'Prototype fonctionnel avec 85% de précision sur la détection. Réduction estimée de 30% du temps d\'analyse radiologique.'
-            }
-        },
-        {
-            'title': 'Plateforme d\'onboarding professionnel',
-            'description': 'Développement d\'une plateforme web d\'intégration pour nouveaux employés: formations sur le métier et sur les logiciels natifs. Stack : Python/Flask, React, PostgreSQL. API REST pour synchronisation RH.',
-            'tech': ['Python', 'Flask', 'React', 'PostgreSQL', 'REST API'],
-            'color': '#43e97b',
-            'image': None,
-            'github': '#',
-            'demo': '#',
-            'details': {
-                'objectif': 'Automatiser et standardiser le processus d\'intégration des nouveaux employés avec parcours personnalisés.',
-                'features': [
-                    'Parcours d\'onboarding personnalisés selon le poste',
-                    'Modules de formation interactifs (vidéos, quiz, exercices)',
-                    'Suivi de progression en temps réel pour RH et managers',
-                    'Synchronisation automatique avec le SIRH via API REST',
-                    'Attribution automatique des accès et licences logicielles',
-                    'Dashboard analytics pour optimiser les parcours'
-                ],
-                'challenges': [
-                    'Intégration avec système RH legacy (API SOAP vers REST)',
-                    'Gestion de contenu multimedia lourd (compression, CDN)',
-                    'Personnalisation dynamique selon 50+ profils de poste différents'
-                ],
-                'results': 'Réduction de 60% du temps d\'onboarding (de 2 semaines à 5 jours). Taux de satisfaction de 92%.'
-            }
-        },
-        {
             'title': 'Projet d\'automatisation des Tests avec Playwright',
             'description': 'Conception et implémentation suite de tests automatisés (Playwright) pour tests fonctionnels. Gestion qualité : rapports détaillés, identification anomalies, création automatique de tickets interne.',
             'tech': ['Playwright', 'JavaScript', 'TypeScript', 'Testing'],
@@ -381,7 +346,7 @@ portfolio_data = {
             'description': 'Développement d\'une plateforme complète pour automatiser déclarations administratives (fiscales, sociales, RH, conformité) et veille réglementaire. Stack : Python/Flask, TypeScript/React, Firestore, Docker, GCP.',
             'tech': ['Python', 'Flask', 'TypeScript', 'React', 'Firestore', 'Docker', 'GCP'],
             'color': '#f093fb',
-            'image': None,
+            'image': 'static/projets/Optimious.png',
             'github': '#',
             'demo': '#',
             'details': {
