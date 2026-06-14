@@ -553,12 +553,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Image
             const modalImage = document.getElementById('modalProjectImage');
+            const modalImageContainer = modalImage ? modalImage.closest('.project-modal-image') : null;
             if (modalImage) {
                 if (project.image) {
                     modalImage.src = project.image;
+                    modalImage.alt = project.title || '';
                     modalImage.style.display = 'block';
+                    if (modalImageContainer) {
+                        modalImageContainer.style.display = 'block';
+                        // Use the project's accent color for the banner background fallback
+                        if (project.color) {
+                            modalImageContainer.style.background = `linear-gradient(135deg, ${project.color}, #8b5cf6)`;
+                        }
+                    }
                 } else {
                     modalImage.style.display = 'none';
+                    if (modalImageContainer) {
+                        modalImageContainer.style.display = 'none';
+                    }
                 }
             }
 
