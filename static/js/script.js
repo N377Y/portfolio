@@ -3,6 +3,79 @@
 // ============================================
 
 // ============================================
+// I18N (FR / EN LANGUAGE SWITCHER)
+// ============================================
+// Smart hybrid system:
+//   - Server-side: i18n.py auto-translates `portfolio_data` and injects
+//     `<field>_en` siblings (cached on disk, manual overrides supported).
+//   - Client-side: every translatable element has `data-fr` / `data-en`
+//     (or `data-fr-html` / `data-en-html` for content with markup).
+//     This module swaps content live without reloading the page.
+const I18N = (() => {
+    const STORAGE_KEY = 'portfolio.lang';
+    const SUPPORTED = ['fr', 'en'];
+    const subscribers = [];
+
+    function getLang() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved && SUPPORTED.includes(saved)) return saved;
+        // Auto-detect from browser, default to FR
+        const nav = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+        return SUPPORTED.includes(nav) ? nav : 'fr';
+    }
+
+    function applyLanguage(lang) {
+        if (!SUPPORTED.includes(lang)) lang = 'fr';
+
+        // 1. Plain text swaps
+        document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+            const value = el.dataset[lang];
+            if (value !== undefined) el.textContent = value;
+        });
+
+        // 2. HTML swaps (content with inline markup like <i>, <strong>, ...)
+        document.querySelectorAll('[data-fr-html][data-en-html]').forEach(el => {
+            const value = lang === 'fr' ? el.dataset.frHtml : el.dataset.enHtml;
+            if (value !== undefined) el.innerHTML = value;
+        });
+
+        // 3. <html lang="..."> for accessibility / SEO
+        document.documentElement.lang = lang;
+
+        // 4. Toggle the active button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        // 5. Persist
+        localStorage.setItem(STORAGE_KEY, lang);
+
+        // 6. Notify subscribers (typing effect, open modal, ...)
+        subscribers.forEach(fn => {
+            try { fn(lang); } catch (e) { console.error('[i18n] subscriber failed:', e); }
+        });
+    }
+
+    function onChange(fn) {
+        if (typeof fn === 'function') subscribers.push(fn);
+    }
+
+    function init() {
+        applyLanguage(getLang());
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+        });
+    }
+
+    return { getLang, applyLanguage, onChange, init };
+})();
+
+// Apply language ASAP (before assets fully load) so users never see a flash
+// of the wrong language. Then re-bind click handlers on DOMContentLoaded.
+I18N.applyLanguage(I18N.getLang());
+document.addEventListener('DOMContentLoaded', I18N.init);
+
+// ============================================
 // PAGE LOADING
 // ============================================
 window.addEventListener('load', () => {
@@ -190,23 +263,38 @@ window.addEventListener('resize', () => {
 });
 
 // ============================================
-// TYPING EFFECT
+// TYPING EFFECT (language-aware)
 // ============================================
 const typingText = document.querySelector('.typing-text');
-if (typingText) {
-    const text = typingText.textContent;
+let typingToken = 0; // increment to cancel any in-flight animation
+
+function startTypingAnimation() {
+    if (!typingText) return;
+    const lang = I18N.getLang();
+    // Read the source text from the data-* attributes (NOT textContent, which
+    // gets cleared while typing). Fall back to the original text content.
+    const source = typingText.dataset[lang] || typingText.textContent || '';
+
+    typingToken += 1;
+    const myToken = typingToken;
     typingText.textContent = '';
     let i = 0;
 
     function typeWriter() {
-        if (i < text.length) {
-            typingText.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
+        if (myToken !== typingToken) return; // a newer animation has started
+        if (i < source.length) {
+            typingText.textContent += source.charAt(i);
+            i += 1;
+            setTimeout(typeWriter, 60);
         }
     }
 
-    setTimeout(typeWriter, 500);
+    setTimeout(typeWriter, 300);
+}
+
+if (typingText) {
+    setTimeout(startTypingAnimation, 500);
+    I18N.onChange(startTypingAnimation);
 }
 
 // ============================================
@@ -546,6 +634,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // Pick a string in the current language, falling back to FR
+            const lang = I18N.getLang();
+            const t = (frKey) => {
+                if (lang === 'en') {
+                    const en = project[frKey + '_en'];
+                    if (en) return en;
+                }
+                return project[frKey] || '';
+            };
+            const tDetail = (frKey) => {
+                const details = project.details || {};
+                if (lang === 'en') {
+                    const en = details[frKey + '_en'];
+                    if (en) return en;
+                }
+                return details[frKey];
+            };
+
             // Remplir la modal avec les données du projet
             const titleEl = document.getElementById('modalProjectTitle');
             const descEl = document.getElementById('modalProjectDescription');
@@ -554,8 +660,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            titleEl.textContent = project.title || '';
-            descEl.textContent = project.description || '';
+            titleEl.textContent = t('title');
+            descEl.textContent = t('description');
 
             // Image
             const modalImage = document.getElementById('modalProjectImage');
@@ -563,7 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalImage) {
                 if (project.image) {
                     modalImage.src = project.image;
-                    modalImage.alt = project.title || '';
+                    modalImage.alt = t('title');
                     modalImage.style.display = 'block';
                     if (modalImageContainer) {
                         modalImageContainer.style.display = 'block';
@@ -583,11 +689,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Détails supplémentaires
             if (project.details) {
                 // Objectif
-                if (project.details.objectif) {
+                const objectif = tDetail('objectif');
+                if (objectif) {
                     const el = document.getElementById('modalProjectObjectif');
                     const section = document.getElementById('modalObjectifSection');
                     if (el && section) {
-                        el.textContent = project.details.objectif;
+                        el.textContent = objectif;
                         section.style.display = 'block';
                     }
                 } else {
@@ -596,12 +703,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Fonctionnalités clés
-                if (project.details.features && project.details.features.length > 0) {
+                const features = tDetail('features');
+                if (features && features.length > 0) {
                     const featuresList = document.getElementById('modalProjectFeatures');
                     const section = document.getElementById('modalFeaturesSection');
                     if (featuresList && section) {
                         featuresList.innerHTML = '';
-                        project.details.features.forEach(feature => {
+                        features.forEach(feature => {
                             const li = document.createElement('li');
                             li.textContent = feature;
                             featuresList.appendChild(li);
@@ -614,12 +722,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Défis techniques
-                if (project.details.challenges && project.details.challenges.length > 0) {
+                const challenges = tDetail('challenges');
+                if (challenges && challenges.length > 0) {
                     const challengesList = document.getElementById('modalProjectChallenges');
                     const section = document.getElementById('modalChallengesSection');
                     if (challengesList && section) {
                         challengesList.innerHTML = '';
-                        project.details.challenges.forEach(challenge => {
+                        challenges.forEach(challenge => {
                             const li = document.createElement('li');
                             li.textContent = challenge;
                             challengesList.appendChild(li);
@@ -632,11 +741,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Résultats
-                if (project.details.results) {
+                const results = tDetail('results');
+                if (results) {
                     const el = document.getElementById('modalProjectResults');
                     const section = document.getElementById('modalResultsSection');
                     if (el && section) {
-                        el.textContent = project.details.results;
+                        el.textContent = results;
                         section.style.display = 'block';
                     }
                 } else {
@@ -718,10 +828,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'auto';
         }
     });
+
+    // Close the modal automatically when the user switches language so they
+    // don't see a half-translated mix of FR/EN content.
+    I18N.onChange(function () {
+        if (modal && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
 });
 
 // ============================================
-// SKILLS TOGGLE (Show More/Less)
+// SKILLS TOGGLE (Show More/Less) - language-aware
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
     const toggleBtn = document.getElementById('skillsToggleBtn');
@@ -729,38 +848,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleIcon = document.getElementById('skillsToggleIcon');
     const extraCategories = document.querySelectorAll('.skills-extra-category');
 
-    if (toggleBtn && extraCategories.length > 0) {
-        let isExpanded = false;
+    if (!toggleBtn || extraCategories.length === 0) return;
 
-        toggleBtn.addEventListener('click', function() {
-            isExpanded = !isExpanded;
+    let isExpanded = false;
 
-            extraCategories.forEach(category => {
-                if (isExpanded) {
-                    category.style.display = 'block';
-                    // Trigger animation
-                    setTimeout(() => {
-                        category.style.opacity = '1';
-                        category.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    category.style.opacity = '0';
-                    category.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        category.style.display = 'none';
-                    }, 300);
-                }
-            });
+    function updateToggleLabel() {
+        if (!toggleBtn || !toggleText) return;
+        const lang = I18N.getLang();
+        const key = (lang === 'en' ? 'en' : 'fr') + (isExpanded ? 'Expanded' : 'Collapsed');
+        const label = toggleBtn.dataset[key];
+        if (label) toggleText.textContent = label;
+    }
 
-            // Update button text and icon
+    toggleBtn.addEventListener('click', function() {
+        isExpanded = !isExpanded;
+
+        extraCategories.forEach(category => {
             if (isExpanded) {
-                toggleText.textContent = 'Voir moins';
-                toggleIcon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                category.style.display = 'block';
+                setTimeout(() => {
+                    category.style.opacity = '1';
+                    category.style.transform = 'translateY(0)';
+                }, 10);
             } else {
-                toggleText.textContent = 'Voir plus';
-                toggleIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                category.style.opacity = '0';
+                category.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    category.style.display = 'none';
+                }, 300);
             }
         });
-    }
+
+        updateToggleLabel();
+        if (toggleIcon) {
+            if (isExpanded) {
+                toggleIcon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            } else {
+                toggleIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            }
+        }
+    });
+
+    // Refresh label when the user switches language
+    I18N.onChange(updateToggleLabel);
+    updateToggleLabel();
 });
 

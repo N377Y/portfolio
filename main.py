@@ -378,6 +378,11 @@ portfolio_data = {
     }
 }
 
+# Enrich the data with English translations (`<field>_en`) using a cached
+# auto-translation pipeline. Runs once at module load; subsequent boots reuse
+# `translations_cache.json` and never hit the network.
+portfolio_data = enrich_with_translations(portfolio_data)
+
 # Routes
 @app.route('/')
 def index():

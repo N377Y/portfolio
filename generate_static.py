@@ -12,11 +12,16 @@ import re
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from main import portfolio_data
+from i18n import enrich_with_translations
 
 def generate_static_site():
     """Génère le site statique pour GitHub Pages"""
 
     print("🚀 Génération du site statique pour GitHub Pages...")
+
+    # S'assurer que les traductions EN sont injectées dans les données
+    # (idempotent : si déjà enrichi côté main.py, ne refait pas le travail réseau)
+    data = enrich_with_translations(portfolio_data)
 
     # Lire le template
     with open('templates/index.html', 'r', encoding='utf-8') as f:
@@ -26,10 +31,11 @@ def generate_static_site():
     template = Template(template_content)
 
     # Rendre le template avec les données
-    html_output = template.render(data=portfolio_data)
+    html_output = template.render(data=data)
 
-    # Nettoyer les attributs data-* i18n restants dans le HTML rendu
-    html_output = re.sub(r'\sdata-(fr|en|i18n)="[^"]*"', '', html_output)
+    # IMPORTANT : on garde les attributs data-fr / data-en / data-fr-html /
+    # data-en-html : c'est ce qui permet au switch de langue côté client de
+    # fonctionner sur le site statique GitHub Pages.
 
     # Créer le fichier index.html à la racine
     with open('index.html', 'w', encoding='utf-8') as f:

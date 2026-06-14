@@ -421,6 +421,52 @@ body.dark-mode .nav.scrolled {
 }
 
 /* ============================================
+   LANGUAGE TOGGLE (FR / EN)
+   ============================================ */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--text-tertiary);
+    border-radius: 999px;
+    overflow: hidden;
+    height: 32px;
+    margin-right: 4px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0 12px;
+    height: 100%;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+}
+
+.lang-btn.active {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+    .lang-toggle {
+        height: 28px;
+    }
+    .lang-btn {
+        font-size: 11px;
+        padding: 0 9px;
+    }
+}
+
+/* ============================================
    HERO SECTION
    ============================================ */
 .hero-section {
