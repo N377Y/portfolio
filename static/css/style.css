@@ -429,7 +429,8 @@ body.dark-mode .nav.scrolled {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0 60px;
+    /* Reserve space for the fixed navbar so hero content can never slide behind it */
+    padding: 120px 60px 60px;
 }
 
 .hero-content {
@@ -480,6 +481,10 @@ body.dark-mode .nav.scrolled {
     font-weight: 600;
     color: var(--text-secondary);
     margin-bottom: 30px;
+    /* Reserve space for up to 2 lines so the typing animation doesn't shift the rest of the hero (and push "Bonjour, je suis" behind the nav) when the text wraps */
+    line-height: 1.25;
+    min-height: calc(2 * 1.25em);
+    display: block;
 }
 
 .cursor-blink {
