@@ -285,14 +285,20 @@ document.querySelectorAll('.skill-fill').forEach(bar => {
 // ============================================
 // PARALLAX EFFECT
 // ============================================
+// NOTE: do NOT apply parallax to `.project-image`. The parent `.project-card`
+// has `overflow: hidden`, so translating the inner image hides it as the user
+// scrolls. We only animate the hero content here.
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero-content, .project-image');
+    const heroContent = document.querySelector('.hero-content');
 
-    parallaxElements.forEach((el, index) => {
-        const speed = index === 0 ? 0.3 : 0.1;
-        el.style.transform = `translateY(${scrolled * speed}px)`;
-    });
+    // Only apply parallax while the hero is still in (or near) the viewport,
+    // otherwise the hero content would translate indefinitely.
+    if (heroContent && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+    } else if (heroContent) {
+        heroContent.style.transform = '';
+    }
 });
 
 // ============================================
