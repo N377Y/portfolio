@@ -1516,6 +1516,46 @@ section {
     margin-top: 0;
 }
 
+/* Compact action links inside a certification card (Open large / Download / View)
+   Shares the look-and-feel of `.certification-link` but in a flex row. */
+.cert-action-link {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background: var(--bg-secondary);
+    border: 1.5px solid var(--accent-1);
+    color: var(--accent-1);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.cert-action-link:hover {
+    background: var(--accent-gradient);
+    border-color: transparent;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.cert-action-link i {
+    font-size: 14px;
+}
+
+.certification-actions .cert-action-link {
+    margin-top: 0;
+}
+
+body.dark-mode .cert-action-link {
+    background: rgba(255, 255, 255, 0.04);
+}
+
 /* ============================================
    CV SECTION
    ============================================ */

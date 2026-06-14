@@ -15,6 +15,7 @@ const I18N = (() => {
     const STORAGE_KEY = 'portfolio.lang';
     const SUPPORTED = ['fr', 'en'];
     const subscribers = [];
+    let currentLang = null; // last language actually applied
 
     function getLang() {
         const saved = localStorage.getItem(STORAGE_KEY);
@@ -26,6 +27,7 @@ const I18N = (() => {
 
     function applyLanguage(lang) {
         if (!SUPPORTED.includes(lang)) lang = 'fr';
+        const changed = lang !== currentLang;
 
         // 1. Plain text swaps. We skip `.typing-text` because the typing
         //    animation reads the source from data-fr/data-en itself and
@@ -53,11 +55,17 @@ const I18N = (() => {
 
         // 5. Persist
         localStorage.setItem(STORAGE_KEY, lang);
+        currentLang = lang;
 
-        // 6. Notify subscribers (typing effect, open modal, ...)
-        subscribers.forEach(fn => {
-            try { fn(lang); } catch (e) { console.error('[i18n] subscriber failed:', e); }
-        });
+        // 6. Notify subscribers ONLY when the language actually changes.
+        //    This avoids re-triggering the typing animation on every
+        //    redundant applyLanguage() call during page bootstrap, which
+        //    otherwise cancelled mid-flight and left text like "Déve".
+        if (changed) {
+            subscribers.forEach(fn => {
+                try { fn(lang); } catch (e) { console.error('[i18n] subscriber failed:', e); }
+            });
+        }
     }
 
     function onChange(fn) {
@@ -325,28 +333,38 @@ document.querySelectorAll('[data-aos]').forEach(el => {
 // ============================================
 // COUNTER ANIMATION
 // ============================================
+// Read the target number directly from the element's text (e.g. "3+", "15+").
+// The HTML stays the single source of truth – no `data-target` to keep in sync,
+// which is what caused the "NaN+" bug previously.
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counter = entry.target;
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000;
-            const increment = target / (duration / 16);
-            let current = 0;
+        if (!entry.isIntersecting) return;
 
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    counter.textContent = Math.ceil(current);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target + '+';
-                }
-            };
-
-            updateCounter();
+        const counter = entry.target;
+        const original = (counter.textContent || '').trim();
+        const match = original.match(/\d+/);
+        if (!match) {
             counterObserver.unobserve(counter);
+            return;
         }
+        const target = parseInt(match[0], 10);
+        const suffix = original.slice(match.index + match[0].length); // keep "+" / "%" / ...
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.ceil(current) + suffix;
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target + suffix;
+            }
+        };
+
+        updateCounter();
+        counterObserver.unobserve(counter);
     });
 }, { threshold: 0.5 });
 
