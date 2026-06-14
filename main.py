@@ -346,7 +346,7 @@ portfolio_data = {
             'description': 'Développement d\'une plateforme complète pour automatiser déclarations administratives (fiscales, sociales, RH, conformité) et veille réglementaire. Stack : Python/Flask, TypeScript/React, Firestore, Docker, GCP.',
             'tech': ['Python', 'Flask', 'TypeScript', 'React', 'Firestore', 'Docker', 'GCP'],
             'color': '#f093fb',
-            'image': 'static/projets/Optimious.png',
+            'image': 'static/projets/Optimious2.png',
             'github': '#',
             'demo': '#',
             'details': {
