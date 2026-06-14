@@ -6,6 +6,8 @@ Author: Marie-Ange KUITCHE
 
 from flask import Flask, render_template, jsonify
 
+from i18n import enrich_with_translations
+
 app = Flask(__name__)
 
 # Application configuration

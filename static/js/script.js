@@ -27,8 +27,12 @@ const I18N = (() => {
     function applyLanguage(lang) {
         if (!SUPPORTED.includes(lang)) lang = 'fr';
 
-        // 1. Plain text swaps
+        // 1. Plain text swaps. We skip `.typing-text` because the typing
+        //    animation reads the source from data-fr/data-en itself and
+        //    manages textContent on its own (otherwise the user briefly
+        //    sees the full new-language text before the animation clears it).
         document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+            if (el.classList.contains('typing-text')) return;
             const value = el.dataset[lang];
             if (value !== undefined) el.textContent = value;
         });

@@ -77,11 +77,11 @@
                 <span class="hero-name">{{ data.name.split()[0] }}</span>
                 <span class="hero-surname">{{ data.name.split()[1] if data.name.split()|length > 1 else '' }}</span>
             </h1>
-            <div class="hero-typing" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="hero-description" data-aos="fade-up" data-aos-delay="200">
                 <span class="typing-text"
                       data-fr="{{ data.title }}"
                       data-en="{{ data.title_en | default(data.title) }}">{{ data.title }}</span><span class="cursor-blink">|</span>
-            </div>
+            </h2>
             <p class="hero-text" data-aos="fade-up" data-aos-delay="300"
                data-fr="{{ data.bio }}"
                data-en="{{ data.bio_en | default(data.bio) }}">{{ data.bio }}</p>
@@ -767,7 +767,7 @@
         window.portfolioProjects = {{ data.projects | tojson | safe }};
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="static/js/script.js?v=4.0"></script>
+    <script src="static/js/script.js?v=4.1"></script>
 </body>
 </html>
 
