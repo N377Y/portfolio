@@ -2182,6 +2182,23 @@ section {
         grid-template-columns: 1fr;
     }
 
+    /* Force ALL project cards (odd AND even) into a single column with the
+       image on top, matching the HackAtassa layout. The desktop selector
+       `.project-card:nth-child(even)` has higher specificity than
+       `.project-card`, so we re-target it explicitly here. */
+    .project-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card:nth-child(even) .project-image,
+    .project-card .project-image {
+        order: 0;
+    }
+
+    .project-card .project-content {
+        order: 1;
+    }
+
     /* Show profile photo BEFORE the about text on tablet/mobile, and keep it smaller */
     .about-grid {
         gap: 40px;
@@ -2193,10 +2210,6 @@ section {
 
     .image-wrapper {
         max-width: 260px;
-    }
-
-    .project-card:nth-child(even) .project-image {
-        order: 1;
     }
 
     .timeline::before {
