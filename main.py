@@ -267,7 +267,7 @@ portfolio_data = {
             'description': 'Pilotage en tant que cheffe de projet avec un fort background technique (rôles cadrés via une matrice RASCI) de la conception bout-en-bout d\'une plateforme IIoT & IA de maintenance prédictive : ingestion temps réel des capteurs, transfert vers Azure Event Hubs, structuration des données dans Databricks (architecture médaillon Bronze/Silver/Gold), API backend FastAPI et interface web multi-rôles (opérateur / team lead / maintenancier) avec alertes et dashboard temps réel. Modèle de prédiction industrialisé : Accuracy 81% / Recall 96%.',
             'tech': ['Python', 'FastAPI', 'Databricks', 'Azure Event Hubs', 'MQTT', 'PostgreSQL', 'Docker', 'Terraform', 'GitHub Actions', 'React', 'TypeScript'],
             'color': '#4facfe',
-            'image': 'static/projets/plateforme_IIoT.png',
+            'image': 'static/projets/plateforme_IIoT2.png',
             'github': '#',
             'demo': '#',
             'details': {
