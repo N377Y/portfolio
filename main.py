@@ -263,6 +263,35 @@ portfolio_data = {
     ],
     'projects': [
         {
+            'title': 'Plateforme IIoT & IA de maintenance prédictive – Hutchinson/ESIGELEC | Cheffe de projet (background technique)',
+            'description': 'Pilotage en tant que cheffe de projet avec un fort background technique (rôles cadrés via une matrice RASCI) de la conception bout-en-bout d\'une plateforme IIoT & IA de maintenance prédictive : ingestion temps réel des capteurs, transfert vers Azure Event Hubs, structuration des données dans Databricks (architecture médaillon Bronze/Silver/Gold), API backend FastAPI et interface web multi-rôles (opérateur / team lead / maintenancier) avec alertes et dashboard temps réel. Modèle de prédiction industrialisé : Accuracy 81% / Recall 96%.',
+            'tech': ['Python', 'FastAPI', 'Databricks', 'Azure Event Hubs', 'MQTT', 'PostgreSQL', 'Docker', 'Terraform', 'GitHub Actions', 'React', 'TypeScript'],
+            'color': '#4facfe',
+            'image': 'static/projets/plateforme_IIoT.png',
+            'github': '#',
+            'demo': '#',
+            'details': {
+                'objectif': 'Concevoir et livrer pour Hutchinson (en collaboration avec l\'ESIGELEC), en tant que cheffe de projet à background technique, une plateforme IIoT & IA de maintenance prédictive bout-en-bout : permettre aux opérateurs, team leads et maintenanciers d\'anticiper les pannes machines grâce aux données capteurs temps réel et à un modèle de Machine Learning industrialisé.',
+                'features': [
+                    'Cheffe de projet (background technique) : cadrage des rôles via matrice RASCI, planning, animation des comités hebdo Hutchinson + ESIGELEC, arbitrages techniques et reporting d\'avancement',
+                    'Ingestion temps réel des capteurs en MQTT puis transfert sécurisé vers Azure Event Hubs',
+                    'Pipeline de données Databricks en architecture médaillon Bronze / Silver / Gold pour la qualité, la traçabilité et l\'industrialisation du Machine Learning',
+                    'API backend FastAPI exposant données capteurs, alertes et prédictions du modèle',
+                    'Interface web React/TypeScript (Vite, Tailwind, Recharts) multi-rôles opérateur / team lead / maintenancier, chacun avec son dashboard et ses alertes',
+                    'Modèle de Machine Learning de maintenance prédictive industrialisé : Accuracy 81% / Recall 96%',
+                    'Industrialisation : Infrastructure as Code Terraform, conteneurisation Docker, CI/CD via GitHub Actions, base PostgreSQL pour la persistance applicative'
+                ],
+                'challenges': [
+                    'Tenir un double rôle cheffe de projet et contributrice technique (data, backend, infra) en m\'appuyant sur la matrice RASCI pour clarifier qui décide, qui exécute et qui est consulté',
+                    'Aligner trois personas métier (opérateur, team lead, maintenancier) sur une seule UX avec des niveaux d\'information et de criticité différents',
+                    'Concevoir un pipeline Bronze/Silver/Gold dans Databricks capable d\'absorber les flux temps réel à fort débit issus des capteurs',
+                    'Optimiser le Recall au-dessus de 95% pour ne jamais rater une panne, sans saturer les maintenanciers de fausses alertes',
+                    'Industrialiser l\'ensemble (Terraform, Docker, GitHub Actions) pour livrer un environnement reproductible côté Hutchinson et transférable à l\'équipe interne'
+                ],
+                'results': 'Plateforme IIoT & IA de maintenance prédictive livrée bout-en-bout pour Hutchinson/ESIGELEC. Modèle en production avec Accuracy 81% / Recall 96%. Posture cheffe de projet à background technique validée par les sponsors : pilotage RASCI et contributions code, data et infra menés en parallèle.'
+            }
+        },
+        {
             'title': 'HackAtassa - Plateforme de gestion de Hackathons',
             'description': 'Plateforme complète pour organiser et gérer des hackathons : inscriptions, gestion des équipes, soumissions de projets, évaluations et classements. Interface intuitive pour organisateurs et participants.',
             'tech': ['Python', 'Flask', 'React', 'PostgreSQL', 'WebSockets'],
