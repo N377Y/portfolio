@@ -2455,6 +2455,30 @@ body.dark-mode .cert-action-link {
         flex-direction: column;
         gap: 15px;
     }
+
+    /* ============================================
+       SKILLS SECTION - MOBILE REORDER
+       Sur mobile : Langages -> DevOps -> [Voir plus]
+       Frameworks et Tools cachés tant que non déplié.
+       ============================================ */
+    .skills-section .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skills-section .section-header { order: 0; }
+    .skills-section .skills-category[data-cat="languages"] { order: 1; }
+    .skills-section .skills-category[data-cat="devops"] { order: 2; }
+    .skills-section .skills-show-more { order: 3; margin-top: 20px; }
+    .skills-section .skills-category[data-cat="frameworks"] { order: 4; }
+    .skills-section .skills-category[data-cat="tools"] { order: 5; }
+    .skills-section .skills-extra-category { order: 6; }
+
+    /* Cacher Frameworks & Tools tant que la section n'est pas dépliée */
+    .skills-section:not(.skills-expanded) .skills-category[data-cat="frameworks"],
+    .skills-section:not(.skills-expanded) .skills-category[data-cat="tools"] {
+        display: none;
+    }
 }
 
 /* ============================================

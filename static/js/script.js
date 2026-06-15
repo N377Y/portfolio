@@ -869,6 +869,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleText = document.getElementById('skillsToggleText');
     const toggleIcon = document.getElementById('skillsToggleIcon');
     const extraCategories = document.querySelectorAll('.skills-extra-category');
+    const skillsSection = document.getElementById('skills');
 
     if (!toggleBtn || extraCategories.length === 0) return;
 
@@ -884,6 +885,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     toggleBtn.addEventListener('click', function() {
         isExpanded = !isExpanded;
+
+        // Toggle classe sur la section pour révéler Frameworks/Tools sur mobile
+        if (skillsSection) {
+            skillsSection.classList.toggle('skills-expanded', isExpanded);
+        }
 
         extraCategories.forEach(category => {
             if (isExpanded) {
